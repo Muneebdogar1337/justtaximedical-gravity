@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "DVLA Blood Pressure Limits for Taxi Drivers | Group 2 Standards";
+const pageDescription = "Understanding DVLA Group 2 blood pressure limits for UK taxi and private hire drivers: the 180/100 mmHg threshold, white-coat syndrome protocols, and retest guidelines.";
+
+const breadcrumbs = [
+  { name: "Medical Standards", url: "/group-2-medical-standards" },
+  { name: "Blood Pressure Limits", url: "/blood-pressure-driving-limits" }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "DVLA Blood Pressure Limits for Group 2 Occupational Drivers",
+  "url": "https://justtaximedicals.co.uk/blood-pressure-driving-limits",
+  "reviewedBy": {
+    "@type": "Physician",
+    "name": "Dr Ayyaz Sultan",
+    "jobTitle": "Consultant Cardiologist & Medical Director",
+    "identifier": "6049394",
+    "sameAs": "https://www.gmc-uk.org/doctor/6049394"
+  },
+  "citation": [
+    "https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals",
+    "https://www.nhs.uk/conditions/high-blood-pressure-hypertension/"
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs} extraSchema={schema}>
+  
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="font-size:13.5px; font-weight:700; color:#CFDEEF; margin-bottom:12px;">
+        <a href="/" style="color:#CFDEEF; text-decoration:none;">Home</a> &nbsp;/&nbsp; <a href="/group-2-medical-standards" style="color:#CFDEEF; text-decoration:none;">Medical Standards</a> &nbsp;/&nbsp; <span style="color:#F5A623;">Blood Pressure</span>
+      </div>
+
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+        <span>🩺</span> Cardiovascular Fitness Standard
+      </div>
+      <h1 style="font-size:clamp(30px, 2.8vw + 16px, 44px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+        DVLA Blood Pressure Limits for Taxi Drivers
+      </h1>
+      <p style="font-size:17.5px; line-height:1.6; color:#CFDEEF; margin:0 0 16px; max-width:680px;">
+        Under statutory DVLA Group 2 rules, your resting blood pressure must consistently read below <strong>180/100 mmHg</strong>. Learn how the test works, how to prepare, and what happens if your reading is elevated.
+      </p>
+
+      <div style="font-size:13.5px; color:#A5D6A7; background:rgba(255,255,255,0.06); padding:8px 14px; border-radius:6px; display:inline-block; border:1px solid rgba(255,255,255,0.12);">
+        🩺 <strong>Reviewed by:</strong> Dr Ayyaz Sultan, Consultant Cardiologist (<a href="https://www.gmc-uk.org/doctor/6049394" target="_blank" rel="noopener" style="color:#81C784;">GMC #6049394</a>)
+      </div>
+    </div>
+  </section>
+
+  <!-- YMYL REFERENCE -->
+  <section style="max-width:1100px; margin:30px auto 0; padding:0 20px;">
+    <div class="clinical-factcheck-box">
+      <div class="clinical-factcheck-icon">🛡️</div>
+      <div class="clinical-factcheck-content">
+        <strong>Statutory Clinical Reference:</strong>
+        Cardiovascular and hypertension driving standards are issued under Chapter 2 of the official 
+        <a href="https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals" target="_blank" rel="noopener">DVLA Assessing Fitness to Drive: A Guide for Medical Professionals</a>. 
+        General diagnostic information on managing high blood pressure is provided by the 
+        <a href="https://www.nhs.uk/conditions/high-blood-pressure-hypertension/" target="_blank" rel="noopener">NHS Hypertension Guidelines</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- THE LIMITS IN DETAIL -->
+  <section style="max-width:1100px; margin:40px auto; padding:0 20px;">
+    <h2 style="font-size:28px; font-weight:800; color:#16234F; margin:0 0 20px;">The Exact Numbers You Need to Know</h2>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px;">
+      
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #0F7A5A; border-radius:6px; padding:24px;">
+        <div style="font-size:32px; font-weight:900; color:#0F7A5A; margin-bottom:8px;">< 180 / 100</div>
+        <h3 style="font-size:18px; font-weight:700; color:#16234F; margin:0 0 8px;">Statutory Pass Threshold</h3>
+        <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0;">
+          Your systolic pressure must be <strong>under 180 mmHg</strong> and your diastolic pressure must be <strong>under 100 mmHg</strong>. If either number reaches or exceeds 180 or 100, the doctor cannot sign the certificate on that reading.
+        </p>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:24px;">
+        <div style="font-size:32px; font-weight:900; color:#1C5FA8; margin-bottom:8px;">3 Readings</div>
+        <h3 style="font-size:18px; font-weight:700; color:#16234F; margin:0 0 8px;">White-Coat Stress Protocol</h3>
+        <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0;">
+          If your first reading is high due to appointment nerves, our GMC doctor will have you relax in a quiet room for 10 to 15 minutes and repeat the measurement up to three times. The lowest settled reading is recorded.
+        </p>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #F5A623; border-radius:6px; padding:24px;">
+        <div style="font-size:32px; font-weight:900; color:#F5A623; margin-bottom:8px;">Fast Retest</div>
+        <h3 style="font-size:18px; font-weight:700; color:#16234F; margin:0 0 8px;">Medication Adjustment</h3>
+        <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0;">
+          If readings remain above 180/100, we provide a structured GP referral note for your doctor to start or adjust antihypertensive medication. Once settled, you can return to our clinic for a fast-track re-test.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- How to prepare -->
+    <div style="background:#F5F7F9; border:1px solid #DFE3E9; border-radius:6px; padding:24px; margin-top:32px;">
+      <h3 style="font-size:20px; font-weight:700; color:#16234F; margin:0 0 12px;">5 Practical Tips to Keep Your Blood Pressure Low on the Day</h3>
+      <ul style="margin:0; padding-left:20px; font-size:15px; color:#3E4453; line-height:1.7;">
+        <li><strong>Avoid Energy Drinks & Strong Coffee:</strong> Refrain from caffeine, energy drinks, and nicotine for at least 2 to 3 hours prior to your exam.</li>
+        <li><strong>Take Regular Medication as Prescribed:</strong> If you take blood pressure tablets (such as Ramipril, Amlodipine, or Losartan), take them on schedule with water on the morning of your assessment.</li>
+        <li><strong>Arrive 10 Minutes Early:</strong> Rushing to find parking spikes your heart rate and systolic pressure. Arrive early and sit calmly in the waiting area.</li>
+        <li><strong>Empty Your Bladder:</strong> A full bladder can temporarily raise systolic blood pressure by 10 to 15 mmHg.</li>
+        <li><strong>Inform the Doctor If You Are Anxious:</strong> Mention if you have white-coat syndrome. Our doctors are friendly and take time to ensure you are comfortable before measuring.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:28px; font-weight:800; color:#fff; margin:0 0 12px;">Book With Compassionate, Experienced Doctors</h2>
+      <p style="font-size:16.5px; color:#CFDEEF; margin:0 0 20px;">
+        Fixed £60 all-inclusive fee. Free 10-minute rest re-readings included if you feel stressed.
+      </p>
+      <button onclick="openBookingModal()" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book Appointment (£60)
+      </button>
+    </div>
+  </section>
+
+</Layout>

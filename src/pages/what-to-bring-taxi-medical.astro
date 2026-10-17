@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "What to Bring to Your Taxi Medical | Essential Driver Checklist";
+const pageDescription = "The complete checklist of what UK taxi and private hire drivers must bring to their medical examination: forms, photo ID, optician prescription, and Summary Care Record.";
+
+const breadcrumbs = [
+  { name: "Checklist", url: "/what-to-bring-taxi-medical" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs}>
+  
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div style="font-size:13.5px; font-weight:700; color:#CFDEEF; margin-bottom:12px;">
+        <a href="/" style="color:#CFDEEF; text-decoration:none;">Home</a> &nbsp;/&nbsp; <span style="color:#F5A623;">What to Bring Checklist</span>
+      </div>
+
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+        <span>📝</span> Appointment Preparation
+      </div>
+      <h1 style="font-size:clamp(30px, 2.8vw + 16px, 44px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+        What to Bring to Your Taxi Driver Medical
+      </h1>
+      <p style="font-size:17.5px; line-height:1.6; color:#CFDEEF; margin:0; max-width:680px;">
+        Make sure your appointment goes smoothly without delays. Bring these essential items to your 15-minute examination.
+      </p>
+    </div>
+  </section>
+
+  <!-- CHECKLIST SECTION -->
+  <section style="max-width:1000px; margin:40px auto; padding:0 20px;">
+    
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      
+      <div style="background:#fff; border:1px solid #DFE3E9; border-left:5px solid #0F7A5A; border-radius:6px; padding:22px; display:flex; gap:16px; align-items:flex-start;">
+        <div style="font-size:32px; line-height:1;">📄</div>
+        <div>
+          <div style="font-size:18px; font-weight:800; color:#16234F; margin-bottom:6px;">1. Your Council Medical Form or DVLA D4 Form</div>
+          <p style="font-size:15px; color:#3E4453; line-height:1.6; margin:0;">
+            Bring the blank medical declaration form required by your local licensing authority (e.g. City of Wolverhampton Council form, TfL Form TPH/204, or standard DVLA D4 form for HGV/PCV). We also keep blank standard forms at our clinics if needed. Complete Section 1 (your personal details) before seeing the doctor.
+          </p>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DFE3E9; border-left:5px solid #0F7A5A; border-radius:6px; padding:22px; display:flex; gap:16px; align-items:flex-start;">
+        <div style="font-size:32px; line-height:1;">🪪</div>
+        <div>
+          <div style="font-size:18px; font-weight:800; color:#16234F; margin-bottom:6px;">2. Valid Official Photo Identification</div>
+          <p style="font-size:15px; color:#3E4453; line-height:1.6; margin:0;">
+            Bring your UK photocard driving licence, valid UK passport, or biometric residence permit. The doctor must verify your identity before signing the statutory declaration.
+          </p>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DFE3E9; border-left:5px solid #0F7A5A; border-radius:6px; padding:22px; display:flex; gap:16px; align-items:flex-start;">
+        <div style="font-size:32px; line-height:1;">👓</div>
+        <div>
+          <div style="font-size:18px; font-weight:800; color:#16234F; margin-bottom:6px;">3. Driving Glasses & Optician Prescription (If Worn)</div>
+          <p style="font-size:15px; color:#3E4453; line-height:1.6; margin:0;">
+            If you wear glasses or contact lenses while driving, bring them along. You must also bring your latest <strong>optician prescription</strong> (issued within the last 12 months) showing your corrective lens power.
+          </p>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DFE3E9; border-left:5px solid #0F7A5A; border-radius:6px; padding:22px; display:flex; gap:16px; align-items:flex-start;">
+        <div style="font-size:32px; line-height:1;">🏥</div>
+        <div>
+          <div style="font-size:18px; font-weight:800; color:#16234F; margin-bottom:6px;">4. NHS Summary Care Record (SCR) or Full Medical Summary</div>
+          <p style="font-size:15px; color:#3E4453; line-height:1.6; margin:0;">
+            Required by most councils (including Wolverhampton and TfL) when seeing an independent GMC doctor. Contact your GP surgery to request a printed Summary Care Record with additional information. Remember: under UK GDPR, GP surgeries cannot charge you for this. <a href="/gdpr-medical-records-letter" style="color:#1C5FA8; font-weight:700;">Download our free GP letter</a>.
+          </p>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DFE3E9; border-left:5px solid #0F7A5A; border-radius:6px; padding:22px; display:flex; gap:16px; align-items:flex-start;">
+        <div style="font-size:32px; line-height:1;">💊</div>
+        <div>
+          <div style="font-size:18px; font-weight:800; color:#16234F; margin-bottom:6px;">5. Current Medication List & Hospital Letters (If Applicable)</div>
+          <p style="font-size:15px; color:#3E4453; line-height:1.6; margin:0;">
+            If you take regular prescription medicines, bring your repeat prescription slip or packaging. If you have undergone heart surgery, stenting, or have treated diabetes/sleep apnoea, bring relevant hospital clinic discharge notes or continuous glucose monitoring (CGM) memory logs.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:28px; font-weight:800; color:#fff; margin:0 0 12px;">Ready to Book Your Examination?</h2>
+      <p style="font-size:16.5px; color:#CFDEEF; margin:0 0 20px;">
+        Fixed £60 all-inclusive fee. Pay on arrival by card or cash.
+      </p>
+      <button onclick="openBookingModal()" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book Appointment (£60)
+      </button>
+    </div>
+  </section>
+
+</Layout>

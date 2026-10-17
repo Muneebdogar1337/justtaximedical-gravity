@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "How to Get NHS Summary Care Record (SCR) Free for Taxi Medical";
+const pageDescription = "Step-by-step guide for UK taxi and private hire drivers to get their NHS Summary Care Record (SCR) free of charge from their GP surgery under UK GDPR rules.";
+
+const breadcrumbs = [
+  { name: "GP Records Guide", url: "/summary-care-record-guide" }
+];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Obtain Your NHS Summary Care Record (SCR) Free of Charge",
+  "description": "Statutory procedure for UK taxi drivers to request their NHS Summary Care Record under the Data Protection Act 2018 without paying GP fees.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Download the Official GDPR Subject Access Request Letter",
+      "text": "Print our free pre-formatted Subject Access Request letter citing Section 45 of the Data Protection Act 2018."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Submit to Your NHS GP Surgery Reception",
+      "text": "Hand the letter directly to your GP receptionist requesting your Summary Care Record with additional information."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Collect the Printed Summary or Export from the NHS App",
+      "text": "GP practices must provide this free of charge within 28 days (often ready within 24 to 48 hours for a summary printout)."
+    }
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs} extraSchema={howToSchema}>
+  
+  <!-- HERO SECTION -->
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="font-size:13.5px; font-weight:700; color:#CFDEEF; margin-bottom:12px;">
+        <a href="/" style="color:#CFDEEF; text-decoration:none;">Home</a> &nbsp;/&nbsp; Driver Rights &nbsp;/&nbsp; <span style="color:#F5A623;">Free GP Records Guide</span>
+      </div>
+
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+        <span>⚖️</span> UK GDPR & Data Protection Act 2018
+      </div>
+      <h1 style="font-size:clamp(30px, 2.8vw + 16px, 44px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+        How to Get Your NHS Summary Care Record (SCR) <span style="color:#F5A623;">Free</span>
+      </h1>
+      <p style="font-size:17.5px; line-height:1.6; color:#CFDEEF; margin:0 0 20px; max-width:680px;">
+        Do not pay £50 to £100 at your GP practice for a medical record summary. Under UK law, you have a statutory right to receive a copy of your records without fee.
+      </p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:12px;">
+        <a href="/gdpr-medical-records-letter" style="background:#F5A623; color:#16234F; font-size:15px; font-weight:800; padding:12px 24px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 12px rgba(245,166,35,0.35);">
+          <span>📄</span> Download Free GP Request Letter
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- YMYL REFERENCE -->
+  <section style="max-width:1100px; margin:30px auto 0; padding:0 20px;">
+    <div class="clinical-factcheck-box">
+      <div class="clinical-factcheck-icon">🛡️</div>
+      <div class="clinical-factcheck-content">
+        <strong>Statutory Legal Reference:</strong>
+        Under Article 15 of the UK General Data Protection Regulation (UK GDPR) and Section 45 of the <em>Data Protection Act 2018</em>, patients have an absolute legal right of access to their health records. According to the 
+        <a href="https://ico.org.uk/for-the-public/your-right-to-get-copies-of-your-data/" target="_blank" rel="noopener">Information Commissioner's Office (ICO)</a>, GP practices cannot charge an administration fee for copies of medical records. Technical guidance on the SCR is maintained by 
+        <a href="https://digital.nhs.uk/services/summary-care-records-scr" target="_blank" rel="noopener">NHS Digital Summary Care Records</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP BY STEP PROCESS -->
+  <section style="max-width:1100px; margin:40px auto; padding:0 20px;">
+    <h2 style="font-size:28px; font-weight:800; color:#16234F; margin:0 0 10px;">
+      3 Simple Steps to Get Your Summary Without Paying GP Fees
+    </h2>
+    <p style="font-size:16px; color:#6B7280; margin:0 0 30px;">
+      Follow these instructions to obtain your official NHS record for your Wolverhampton, TfL, Birmingham, or Manchester taxi medical:
+    </p>
+
+    <ol class="how-to-steps-list">
+      <li class="how-to-step-item">
+        <div class="how-to-step-title">1. Print or Show the Statutory GDPR Request Letter</div>
+        <div class="how-to-step-body">
+          Download our pre-formatted <a href="/gdpr-medical-records-letter" style="color:#1C5FA8; font-weight:700;">Subject Access Request (SAR) letter</a>. It contains the exact legal references reminding GP staff that charging for medical summaries is prohibited under ICO guidance.
+        </div>
+      </li>
+
+      <li class="how-to-step-item">
+        <div class="how-to-step-title">2. Request "Summary Care Record with Additional Information"</div>
+        <div class="how-to-step-body">
+          Hand the letter to your GP receptionist. Clearly request a printout of your <strong>Summary Care Record with Additional Information</strong>. This document includes your active medications, recorded allergies, significant past medical conditions, and recent consultation summaries required by licensing councils.
+        </div>
+      </li>
+
+      <li class="how-to-step-item">
+        <div class="how-to-step-title">3. Alternatively, Export Records Directly from the Free NHS App</div>
+        <div class="how-to-step-body">
+          If you have access to the official <strong>NHS App</strong> on your smartphone, you can frequently view and download your full GP health record, medication list, and test results as a PDF without having to visit the surgery reception desk.
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- COMMON GP EXCUSES DEBUNKED -->
+  <section style="background:#F5F7F9; border-top:1px solid #DFE3E9; border-bottom:1px solid #DFE3E9; padding:50px 20px;">
+    <div style="max-width:1000px; margin:0 auto;">
+      <h2 style="font-size:28px; font-weight:800; color:#16234F; margin:0 0 24px; text-align:center;">
+        Common GP Reception Objections & How to Respond
+      </h2>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
+        
+        <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:20px;">
+          <div style="color:#C62828; font-weight:700; font-size:15px; margin-bottom:8px;">❌ GP says: "We charge £50 for third-party medical requests"</div>
+          <div style="font-size:14.5px; color:#222530; line-height:1.5;">
+            <strong>Your response:</strong> "I am not asking for a third-party report. I am making a personal Subject Access Request under Section 45 of the Data Protection Act 2018 for my own records. The Information Commissioner explicitly confirms this must be provided free."
+          </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:20px;">
+          <div style="color:#C62828; font-weight:700; font-size:15px; margin-bottom:8px;">❌ GP says: "It will take 30 days to prepare"</div>
+          <div style="font-size:14.5px; color:#222530; line-height:1.5;">
+            <strong>Your response:</strong> "While the statutory limit is one month, a computer-generated Summary Care Record printout takes under 60 seconds to export. Could you kindly print the electronic summary today so I do not miss my council licensing deadline?"
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:30px; font-weight:800; color:#fff; margin:0 0 12px;">Got Your Summary? Book Your Medical Today</h2>
+      <p style="font-size:17px; color:#CFDEEF; margin:0 0 24px;">
+        Our GMC doctors will review your summary and complete your council certificate for just £60.
+      </p>
+      <button onclick="openBookingModal()" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book Appointment (£60)
+      </button>
+    </div>
+  </section>
+
+</Layout>

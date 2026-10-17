@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Manchester Taxi Medical £60 | Approved Council Doctors | Same Day";
+const pageDescription = "Book your Manchester City Council taxi driver medical for £60. Fully approved GMC doctors, free eye test, and complete Summary Care Record review. Pay on arrival.";
+
+const breadcrumbs = [
+  { name: "Council Licensing", url: "/taxi-medical-form-downloads" },
+  { name: "Manchester Council", url: "/manchester-taxi-medical" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs}>
+  
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="font-size:13.5px; font-weight:700; color:#CFDEEF; margin-bottom:12px;">
+        <a href="/" style="color:#CFDEEF; text-decoration:none;">Home</a> &nbsp;/&nbsp; Council Licensing &nbsp;/&nbsp; <span style="color:#F5A623;">Manchester</span>
+      </div>
+
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+        <span>🏛️</span> Manchester City Council Compliant
+      </div>
+      <h1 style="font-size:clamp(30px, 2.8vw + 16px, 44px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+        Manchester Taxi Medical <span style="color:#F5A623;">£60</span>
+      </h1>
+      <p style="font-size:17.5px; line-height:1.6; color:#CFDEEF; margin:0 0 20px; max-width:680px;">
+        Official hackney carriage and private hire driver medical assessments in central Manchester. Completed by registered GMC doctors with Summary Care Record (SCR) verification.
+      </p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:14px;">
+        <button onclick="openBookingModal('Manchester City Council', 'Taxi Medical (£60)')" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 28px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.35);">
+          Book Manchester Medical — £60
+        </button>
+        <a href="tel:03300589690" style="background:rgba(255,255,255,0.12); color:#fff; text-decoration:none; font-size:15.5px; font-weight:700; padding:14px 22px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); display:inline-flex; align-items:center; gap:8px;">
+          <span>📞</span> Call 0330 058 9690
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- YMYL REFERENCE -->
+  <section style="max-width:1100px; margin:30px auto 0; padding:0 20px;">
+    <div class="clinical-factcheck-box">
+      <div class="clinical-factcheck-icon">🛡️</div>
+      <div class="clinical-factcheck-content">
+        <strong>Statutory Council Policy Reference:</strong>
+        Examinations for Manchester drivers adhere to the Manchester City Council Hackney Carriage and Private Hire Licensing Policy and statutory 
+        <a href="https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals" target="_blank" rel="noopener">DVLA Group 2 Medical Standards</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA GRID -->
+  <section style="max-width:1100px; margin:40px auto; padding:0 20px;">
+    <h2 style="font-size:28px; font-weight:800; color:#16234F; margin:0 0 20px;">Manchester Licensing Specifications</h2>
+
+    <div class="council-data-grid">
+      <div class="council-data-item">
+        <div class="council-data-label">Official Medical Form</div>
+        <div class="council-data-val">Manchester Driver Medical Certificate</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          Completed and stamped by an approved GMC registered medical practitioner.
+        </p>
+      </div>
+
+      <div class="council-data-item">
+        <div class="council-data-label">Medical History Requirement</div>
+        <div class="council-data-val">NHS Summary Care Record (SCR)</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          Must include full medication history, recorded medical conditions, and consultations.
+        </p>
+      </div>
+
+      <div class="council-data-item">
+        <div class="council-data-label">Licensing Office Location</div>
+        <div class="council-data-val">Town Hall Extension, Albert Square</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          Level 1, Town Hall Extension, Manchester M60 2LA. Online document upload portal available.
+        </p>
+      </div>
+
+      <div class="council-data-item">
+        <div class="council-data-label">Manchester Examination Hub</div>
+        <div class="council-data-val">Piccadilly House, City Centre</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          Convenient central location within walking distance of Piccadilly Train Station with driver parking nearby.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:28px; font-weight:800; color:#fff; margin:0 0 12px;">Book Your Manchester Taxi Medical</h2>
+      <p style="font-size:16.5px; color:#CFDEEF; margin:0 0 20px;">
+        Fixed £60 all-inclusive fee. Pay on arrival by card or cash.
+      </p>
+      <button onclick="openBookingModal('Manchester City Council', 'Taxi Medical (£60)')" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book Appointment (£60)
+      </button>
+    </div>
+  </section>
+
+</Layout>

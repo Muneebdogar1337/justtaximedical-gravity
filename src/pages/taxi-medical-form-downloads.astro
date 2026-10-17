@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Taxi Medical Form Downloads PDF | UK Council & DVLA D4 Forms";
+const pageDescription = "Download official taxi and private hire medical forms: City of Wolverhampton Council, TfL TPH/204, Birmingham, Manchester, Leeds, and DVLA D4 forms.";
+
+const breadcrumbs = [
+  { name: "Form Downloads", url: "/taxi-medical-form-downloads" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs}>
+  
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="font-size:13.5px; font-weight:700; color:#CFDEEF; margin-bottom:12px;">
+        <a href="/" style="color:#CFDEEF; text-decoration:none;">Home</a> &nbsp;/&nbsp; <span style="color:#F5A623;">Council Form Downloads</span>
+      </div>
+
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+        <span>📥</span> Official Council & DVLA PDF Forms
+      </div>
+      <h1 style="font-size:clamp(30px, 2.8vw + 16px, 44px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+        UK Taxi Medical Form Downloads
+      </h1>
+      <p style="font-size:17.5px; line-height:1.6; color:#CFDEEF; margin:0; max-width:680px;">
+        Download the official medical assessment form required by your licensing authority. We also carry pre-printed copies at all our regional clinics.
+      </p>
+    </div>
+  </section>
+
+  <!-- YMYL REFERENCE -->
+  <section style="max-width:1100px; margin:30px auto 0; padding:0 20px;">
+    <div class="clinical-factcheck-box">
+      <div class="clinical-factcheck-icon">🛡️</div>
+      <div class="clinical-factcheck-content">
+        <strong>Official Government Portals:</strong>
+        For commercial fleet licences (HGV / PCV / C1), always download the current revision directly from the official 
+        <a href="https://www.gov.uk/government/publications/d4-medical-examination-report" target="_blank" rel="noopener">DVLA D4 Medical Examination Report (GOV.UK)</a>. 
+        Council forms must be submitted within 4 months of the doctor's signature date.
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM LIST -->
+  <section style="max-width:1100px; margin:40px auto; padding:0 20px;">
+    
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px;">
+      
+      <!-- Wolverhampton -->
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:24px;">
+        <h3 style="font-size:20px; font-weight:800; color:#16234F; margin:0 0 6px;">Wolverhampton Council Medical Certificate</h3>
+        <p style="font-size:14px; color:#6B7280; margin:0 0 16px;">
+          Mandatory for City of Wolverhampton Council private hire and hackney carriage driver badge applications and 3-yearly renewals.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <a href="/wolverhampton-taxi-medical" style="background:#1C5FA8; color:#fff; text-decoration:none; font-size:14px; font-weight:700; padding:10px 16px; border-radius:4px;">
+            View Wolverhampton Guide ➔
+          </a>
+        </div>
+      </div>
+
+      <!-- TfL -->
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:24px;">
+        <h3 style="font-size:20px; font-weight:800; color:#16234F; margin:0 0 6px;">TfL Form TPH/204 (London PCO)</h3>
+        <p style="font-size:14px; color:#6B7280; margin:0 0 16px;">
+          Official Transport for London medical declaration form required for London private hire (Uber/Bolt) and black cab licensing.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <a href="/london-tfl-medical" style="background:#1C5FA8; color:#fff; text-decoration:none; font-size:14px; font-weight:700; padding:10px 16px; border-radius:4px;">
+            View London TfL Guide ➔
+          </a>
+        </div>
+      </div>
+
+      <!-- DVLA D4 -->
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #0F7A5A; border-radius:6px; padding:24px;">
+        <h3 style="font-size:20px; font-weight:800; color:#16234F; margin:0 0 6px;">DVLA D4 Medical Examination Report</h3>
+        <p style="font-size:14px; color:#6B7280; margin:0 0 16px;">
+          The statutory medical form for HGV Class 1 & 2 lorry drivers, PCV bus drivers, ambulance paramedics (C1), and selected UK councils.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <a href="https://www.gov.uk/government/publications/d4-medical-examination-report" target="_blank" rel="noopener" style="background:#0F7A5A; color:#fff; text-decoration:none; font-size:14px; font-weight:700; padding:10px 16px; border-radius:4px;">
+            Download D4 Form (GOV.UK) ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Birmingham -->
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:24px;">
+        <h3 style="font-size:20px; font-weight:800; color:#16234F; margin:0 0 6px;">Birmingham Driver Medical Assessment</h3>
+        <p style="font-size:14px; color:#6B7280; margin:0 0 16px;">
+          Birmingham City Council's official medical form for hackney and private hire licensing.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <a href="/birmingham-taxi-medical" style="background:#1C5FA8; color:#fff; text-decoration:none; font-size:14px; font-weight:700; padding:10px 16px; border-radius:4px;">
+            View Birmingham Guide ➔
+          </a>
+        </div>
+      </div>
+
+      <!-- Manchester -->
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:24px;">
+        <h3 style="font-size:20px; font-weight:800; color:#16234F; margin:0 0 6px;">Manchester City Council Driver Medical</h3>
+        <p style="font-size:14px; color:#6B7280; margin:0 0 16px;">
+          Greater Manchester private hire and hackney carriage medical examination certificate.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <a href="/manchester-taxi-medical" style="background:#1C5FA8; color:#fff; text-decoration:none; font-size:14px; font-weight:700; padding:10px 16px; border-radius:4px;">
+            View Manchester Guide ➔
+          </a>
+        </div>
+      </div>
+
+      <!-- Leeds -->
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:24px;">
+        <h3 style="font-size:20px; font-weight:800; color:#16234F; margin:0 0 6px;">Leeds City Council Medical Certificate</h3>
+        <p style="font-size:14px; color:#6B7280; margin:0 0 16px;">
+          Leeds taxi & private hire driver medical certificate form.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <a href="/leeds-taxi-medical" style="background:#1C5FA8; color:#fff; text-decoration:none; font-size:14px; font-weight:700; padding:10px 16px; border-radius:4px;">
+            View Leeds Guide ➔
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:28px; font-weight:800; color:#fff; margin:0 0 12px;">Need Help Filling Your Form?</h2>
+      <p style="font-size:16.5px; color:#CFDEEF; margin:0 0 20px;">
+        Book your £60 appointment and our GMC doctors will guide you through every section.
+      </p>
+      <button onclick="openBookingModal()" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book Appointment (£60)
+      </button>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,414 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "UK Taxi Driver Medicals £60 | GMC Registered Doctors | DVLA Group 2";
+const pageDescription = "Book your UK taxi or private hire driver medical examination for £60. Conducted by GMC-registered doctors for Wolverhampton, TfL, Birmingham, Manchester & all UK councils. Pay on arrival.";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a UK taxi driver medical cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At Just Taxi Medicals, all taxi and private hire medical assessments cost £60 all-inclusive, with no hidden fees for vision testing or form stamping. You can pay on arrival at the clinic by cash or card."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who conducts the medical examination?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All medical examinations are conducted by fully registered General Medical Council (GMC) doctors with an active licence to practise, including Dr Ayyaz Sultan (GMC #6049394) and Dr Ali Hassan Cheema (GMC #8022686)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my local council accept a medical from your doctors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our doctors conduct examinations strictly in line with statutory DVLA Group 2 medical standards. Major licensing authorities including the City of Wolverhampton Council, Transport for London (TfL), Birmingham City Council, and Manchester City Council accept our completed certificates when accompanied by your NHS Summary Care Record (SCR)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the eyesight requirements to pass a taxi medical?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under statutory DVLA Group 2 rules, you must achieve visual acuity of at least 6/7.5 on a Snellen chart in your better eye and at least 6/60 in the other eye (with glasses or contact lenses if worn). Your horizontal visual field must be at least 160 degrees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if my blood pressure is high on the day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To pass under Group 2 criteria, blood pressure must be consistently below 180/100 mmHg. If your initial reading is elevated due to white-coat syndrome or stress, our doctors will let you rest for 10 to 15 minutes and take up to three repeat readings."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} extraSchema={faqSchema}>
+  
+  <!-- HERO SECTION -->
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:60px 20px 70px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:40px; align-items:center;">
+      
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:6px 14px; border-radius:20px; font-size:13.5px; font-weight:700; margin-bottom:18px;">
+          <span>🇬🇧</span> Approved DVLA Group 2 Medical Examiners
+        </div>
+        <h1 style="font-size:clamp(32px, 3.2vw + 16px, 48px); font-weight:800; line-height:1.15; margin:0 0 18px; color:#fff;">
+          UK Taxi Driver Medicals <span style="color:#F5A623;">£60 Fixed</span>
+        </h1>
+        <p style="font-size:18px; line-height:1.6; color:#CFDEEF; margin:0 0 28px; max-width:540px;">
+          Fast, friendly medical examinations conducted by GMC-registered physicians. Fully compliant with Wolverhampton, TfL, Birmingham, Manchester, and all UK licensing authorities.
+        </p>
+
+        <!-- Trust Features Grid -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin-bottom:32px;">
+          <div style="display:flex; align-items:center; gap:10px; font-size:14.5px; color:#EDEFF3;">
+            <span style="color:#0F7A5A; font-size:18px; font-weight:bold;">✓</span> GMC Registered Doctors
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; font-size:14.5px; color:#EDEFF3;">
+            <span style="color:#0F7A5A; font-size:18px; font-weight:bold;">✓</span> Free Eye Test Included
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; font-size:14.5px; color:#EDEFF3;">
+            <span style="color:#0F7A5A; font-size:18px; font-weight:bold;">✓</span> Pay on Arrival (Cash/Card)
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; font-size:14.5px; color:#EDEFF3;">
+            <span style="color:#0F7A5A; font-size:18px; font-weight:bold;">✓</span> Same-Day Appointments
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div style="display:flex; flex-wrap:wrap; gap:14px;">
+          <button onclick="openBookingModal()" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 28px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.4);">
+            📅 Book Your Medical — £60
+          </button>
+          <a href="tel:03300589690" style="background:rgba(255,255,255,0.1); color:#fff; text-decoration:none; font-size:16px; font-weight:700; padding:14px 24px; border-radius:4px; border:1px solid rgba(255,255,255,0.25); display:inline-flex; align-items:center; gap:8px;">
+            <span>📞</span> 0330 058 9690
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Booking Card -->
+      <div style="background:#fff; color:#222530; border-radius:8px; padding:30px; box-shadow:0 12px 32px rgba(0,0,0,0.2);">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #DFE3E9; padding-bottom:16px; margin-bottom:20px;">
+          <div>
+            <div style="font-size:20px; font-weight:800; color:#16234F;">Fast-Track Booking</div>
+            <div style="font-size:13.5px; color:#6B7280;">No card required online</div>
+          </div>
+          <div style="background:#EDF3FA; color:#1C5FA8; font-size:20px; font-weight:900; padding:6px 14px; border-radius:4px;">
+            £60
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <label style="display:block; font-size:13px; font-weight:700; color:#16234F; margin-bottom:4px;">Select Council / Licensing Body</label>
+            <select id="quickCouncil" style="width:100%; padding:10px 12px; border:1px solid #DFE3E9; border-radius:4px; font-size:14.5px; font-family:inherit;">
+              <option value="Wolverhampton Council">City of Wolverhampton Council</option>
+              <option value="Transport for London (TfL)">Transport for London (TfL PCO)</option>
+              <option value="Birmingham City Council">Birmingham City Council</option>
+              <option value="Manchester City Council">Manchester City Council</option>
+              <option value="Leeds City Council">Leeds City Council</option>
+              <option value="Liverpool City Council">Liverpool City Council</option>
+              <option value="Sheffield City Council">Sheffield City Council</option>
+              <option value="Other UK Council">Other UK Council</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display:block; font-size:13px; font-weight:700; color:#16234F; margin-bottom:4px;">Select Examination Clinic</label>
+            <select id="quickClinic" style="width:100%; padding:10px 12px; border:1px solid #DFE3E9; border-radius:4px; font-size:14.5px; font-family:inherit;">
+              <option value="Manchester City Centre (Piccadilly)">Manchester (Piccadilly Clinic)</option>
+              <option value="Liverpool Central Clinic">Liverpool (Central Clinic)</option>
+              <option value="Birmingham Central Clinic">Birmingham (Central Clinic)</option>
+              <option value="Leeds City Centre Clinic">Leeds (City Centre Clinic)</option>
+              <option value="London Central Clinic">London (Central Clinic)</option>
+              <option value="Wolverhampton Regional Clinic">Wolverhampton Regional Clinic</option>
+            </select>
+          </div>
+
+          <button onclick="handleQuickBook()" style="background:#0F7A5A; color:#fff; font-size:16px; font-weight:800; padding:14px; border-radius:4px; border:none; cursor:pointer; margin-top:8px; box-shadow:0 3px 8px rgba(15,122,90,0.3);">
+            Continue to Choose Time Slot ➔
+          </button>
+        </div>
+
+        <div style="font-size:12.5px; color:#6B7280; text-align:center; margin-top:14px;">
+          🔒 Guaranteed Council Acceptance · Free 10-Minute BP Rest Retest
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- YMYL CLINICAL REFERENCE CALLOUT -->
+  <section style="max-width:1200px; margin:30px auto 0; padding:0 20px;">
+    <div class="clinical-factcheck-box">
+      <div class="clinical-factcheck-icon">🛡️</div>
+      <div class="clinical-factcheck-content">
+        <strong>Statutory Medical Standards Notice:</strong>
+        All occupational driver fitness assessments conducted at our clinics strictly adhere to the 
+        <a href="https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals" target="_blank" rel="noopener">DVLA Assessing Fitness to Drive Guide for Medical Professionals</a>. 
+        Examinations are carried out by General Medical Council registered physicians (<a href="https://www.gmc-uk.org/doctor/6049394" target="_blank" rel="noopener">Dr Ayyaz Sultan GMC #6049394</a> and <a href="https://www.gmc-uk.org/doctor/8022686" target="_blank" rel="noopener">Dr Ali Hassan Cheema GMC #8022686</a>). Drivers have a statutory right under UK GDPR to obtain their NHS Summary Care Record free of charge from their GP practice.
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP LICENSING COUNCILS -->
+  <section style="max-width:1200px; margin:50px auto; padding:0 20px;">
+    <div style="text-align:center; max-width:700px; margin:0 auto 40px;">
+      <h2 style="font-size:32px; font-weight:800; color:#16234F; margin:0 0 12px;">Council-Specific Medical Examinations</h2>
+      <p style="font-size:16px; color:#6B7280; line-height:1.6;">
+        Every local licensing authority maintains specific medical declaration forms and record requirements. Select your council below for exact instructions and form downloads:
+      </p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px;">
+      
+      <a href="/wolverhampton-taxi-medical" style="text-decoration:none; background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:22px; transition:transform 0.15s; display:block;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:13px; font-weight:700; color:#1C5FA8; text-transform:uppercase; margin-bottom:6px;">High Volume Hub</div>
+        <div style="font-size:20px; font-weight:800; color:#16234F; margin-bottom:8px;">Wolverhampton Council</div>
+        <p style="font-size:14px; color:#6B7280; line-height:1.5; margin:0 0 14px;">
+          Accepted across the UK. Fast digital verification. Full Summary Care Record (SCR) required.
+        </p>
+        <span style="font-size:14.5px; font-weight:700; color:#0F7A5A;">View Council Requirements ➔</span>
+      </a>
+
+      <a href="/london-tfl-medical" style="text-decoration:none; background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:22px; transition:transform 0.15s; display:block;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:13px; font-weight:700; color:#1C5FA8; text-transform:uppercase; margin-bottom:6px;">Greater London</div>
+        <div style="font-size:20px; font-weight:800; color:#16234F; margin-bottom:8px;">London TfL (TPH/204)</div>
+        <p style="font-size:14px; color:#6B7280; line-height:1.5; margin:0 0 14px;">
+          Official TPH/204 medical declaration. Strict visual acuity and blood pressure compliance.
+        </p>
+        <span style="font-size:14.5px; font-weight:700; color:#0F7A5A;">View TfL Requirements ➔</span>
+      </a>
+
+      <a href="/birmingham-taxi-medical" style="text-decoration:none; background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:22px; transition:transform 0.15s; display:block;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:13px; font-weight:700; color:#1C5FA8; text-transform:uppercase; margin-bottom:6px;">West Midlands</div>
+        <div style="font-size:20px; font-weight:800; color:#16234F; margin-bottom:8px;">Birmingham City Council</div>
+        <p style="font-size:14px; color:#6B7280; line-height:1.5; margin:0 0 14px;">
+          Driver medical assessment for hackney and private hire licences. Central clinic access.
+        </p>
+        <span style="font-size:14.5px; font-weight:700; color:#0F7A5A;">View Birmingham Guide ➔</span>
+      </a>
+
+      <a href="/manchester-taxi-medical" style="text-decoration:none; background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:22px; transition:transform 0.15s; display:block;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:13px; font-weight:700; color:#1C5FA8; text-transform:uppercase; margin-bottom:6px;">Greater Manchester</div>
+        <div style="font-size:20px; font-weight:800; color:#16234F; margin-bottom:8px;">Manchester City Council</div>
+        <p style="font-size:14px; color:#6B7280; line-height:1.5; margin:0 0 14px;">
+          Full compliance with Greater Manchester Clean Air taxi policy. City centre examination room.
+        </p>
+        <span style="font-size:14.5px; font-weight:700; color:#0F7A5A;">View Manchester Guide ➔</span>
+      </a>
+
+      <a href="/leeds-taxi-medical" style="text-decoration:none; background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:22px; transition:transform 0.15s; display:block;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:13px; font-weight:700; color:#1C5FA8; text-transform:uppercase; margin-bottom:6px;">West Yorkshire</div>
+        <div style="font-size:20px; font-weight:800; color:#16234F; margin-bottom:8px;">Leeds City Council</div>
+        <p style="font-size:14px; color:#6B7280; line-height:1.5; margin:0 0 14px;">
+          Private hire certificate completed with full medical summary review. Near York Road depot.
+        </p>
+        <span style="font-size:14.5px; font-weight:700; color:#0F7A5A;">View Leeds Guide ➔</span>
+      </a>
+
+      <a href="/d4-hgv-medical" style="text-decoration:none; background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:22px; transition:transform 0.15s; display:block;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:13px; font-weight:700; color:#1C5FA8; text-transform:uppercase; margin-bottom:6px;">Commercial Fleet</div>
+        <div style="font-size:20px; font-weight:800; color:#16234F; margin-bottom:8px;">D4 HGV & Lorry Medical</div>
+        <p style="font-size:14px; color:#6B7280; line-height:1.5; margin:0 0 14px;">
+          Official DVLA D4 form completed for Class 1 (C+E) and Class 2 (C) vocational drivers.
+        </p>
+        <span style="font-size:14.5px; font-weight:700; color:#0F7A5A;">View D4 Requirements ➔</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS IN THE EXAM (CLINICAL BREAKDOWN) -->
+  <section style="background:#F5F7F9; border-top:1px solid #DFE3E9; border-bottom:1px solid #DFE3E9; padding:60px 20px;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="text-align:center; max-width:700px; margin:0 auto 40px;">
+        <h2 style="font-size:32px; font-weight:800; color:#16234F; margin:0 0 12px;">What Happens During Your 15-Minute Medical?</h2>
+        <p style="font-size:16px; color:#6B7280; line-height:1.6;">
+          Our GMC doctors follow statutory DVLA Group 2 protocols to ensure your fitness assessment is thorough, efficient, and stress-free.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
+        
+        <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:24px;">
+          <div style="font-size:28px; margin-bottom:12px;">👁️</div>
+          <div style="font-size:18px; font-weight:700; color:#16234F; margin-bottom:8px;">1. Eyesight & Visual Acuity</div>
+          <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0;">
+            Tested on an illuminated Snellen chart. You must reach 6/7.5 in your better eye and 6/60 in your other eye. Confrontation testing checks your 160° horizontal visual field. Bring your driving glasses.
+          </p>
+          <div style="margin-top:12px;">
+            <a href="/driver-eye-test-standards" style="font-size:13.5px; font-weight:700; color:#1C5FA8;">Read Eye Test Rules ➔</a>
+          </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:24px;">
+          <div style="font-size:28px; margin-bottom:12px;">🩺</div>
+          <div style="font-size:18px; font-weight:700; color:#16234F; margin-bottom:8px;">2. Blood Pressure Check</div>
+          <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0;">
+            Measured with a calibrated sphygmomanometer while seated. Must be under 180/100 mmHg. If you experience white-coat stress, the doctor allows a 10-minute rest before repeating the reading.
+          </p>
+          <div style="margin-top:12px;">
+            <a href="/blood-pressure-driving-limits" style="font-size:13.5px; font-weight:700; color:#1C5FA8;">Read BP Guidelines ➔</a>
+          </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:24px;">
+          <div style="font-size:28px; margin-bottom:12px;">📋</div>
+          <div style="font-size:18px; font-weight:700; color:#16234F; margin-bottom:8px;">3. Medical History & SCR Review</div>
+          <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0;">
+            The doctor reviews your NHS Summary Care Record (SCR), previous surgeries, regular medications, diabetes control, cardiac history, and any sleep apnoea symptoms.
+          </p>
+          <div style="margin-top:12px;">
+            <a href="/summary-care-record-guide" style="font-size:13.5px; font-weight:700; color:#1C5FA8;">How to Get Free SCR ➔</a>
+          </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:24px;">
+          <div style="font-size:28px; margin-bottom:12px;">✍️</div>
+          <div style="font-size:18px; font-weight:700; color:#16234F; margin-bottom:8px;">4. Form Signing & Rubber Stamp</div>
+          <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0;">
+            Once all clinical benchmarks are verified, the doctor signs your declaration, enters their GMC registration number, and applies the official clinic rubber stamp for your council upload.
+          </p>
+          <div style="margin-top:12px;">
+            <a href="/what-to-bring-taxi-medical" style="font-size:13.5px; font-weight:700; color:#1C5FA8;">Full What to Bring List ➔</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE DOCTORS (E-E-A-T) -->
+  <section style="max-width:1200px; margin:60px auto; padding:0 20px;">
+    <div style="text-align:center; max-width:700px; margin:0 auto 30px;">
+      <h2 style="font-size:32px; font-weight:800; color:#16234F; margin:0 0 12px;">Meet Our GMC-Registered Examining Physicians</h2>
+      <p style="font-size:16px; color:#6B7280; line-height:1.6;">
+        All examinations are conducted by senior medical practitioners with active licences on the General Medical Council register.
+      </p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px;">
+      
+      <!-- Dr Sultan -->
+      <div class="doctor-credential-card">
+        <div class="doctor-badge-header">
+          <div class="doctor-avatar-circle">AS</div>
+          <div class="doctor-name-title">
+            <h3>Dr Ayyaz Sultan</h3>
+            <span>Consultant Cardiologist & Medical Director</span>
+          </div>
+        </div>
+        <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0 0 14px;">
+          <strong>Qualifications:</strong> MBBS, MRCP (UK), FRCP (Glasg), FACC, FAHA.<br/>
+          Approved DVLA Group 2 medical examiner specializing in cardiovascular risk assessment, ECG interpretation, and occupational driver fitness.
+        </p>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+          <a href="https://www.gmc-uk.org/doctor/6049394" target="_blank" rel="noopener" class="doctor-gmc-pill">
+            <span>🛡️</span> Verified GMC #6049394 ↗
+          </a>
+          <span style="font-size:13px; color:#6B7280; font-weight:600;">Greater Manchester & Liverpool</span>
+        </div>
+      </div>
+
+      <!-- Dr Cheema -->
+      <div class="doctor-credential-card">
+        <div class="doctor-badge-header">
+          <div class="doctor-avatar-circle">AC</div>
+          <div class="doctor-name-title">
+            <h3>Dr Ali Hassan Cheema</h3>
+            <span>Occupational Medical Examiner</span>
+          </div>
+        </div>
+        <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0 0 14px;">
+          <strong>Qualifications:</strong> MBBS, PLAB (GMC Registered 2024).<br/>
+          Specializing in Emergency Medicine, Endocrinology, driver diabetes management, Snellen visual acuity screening, and vocational compliance.
+        </p>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+          <a href="https://www.gmc-uk.org/doctor/8022686" target="_blank" rel="noopener" class="doctor-gmc-pill">
+            <span>🛡️</span> Verified GMC #8022686 ↗
+          </a>
+          <span style="font-size:13px; color:#6B7280; font-weight:600;">West Midlands & Yorkshire</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section style="background:#fff; border-top:1px solid #DFE3E9; padding:60px 20px;">
+    <div style="max-width:900px; margin:0 auto;">
+      <h2 style="font-size:32px; font-weight:800; color:#16234F; margin:0 0 24px; text-align:center;">Frequently Asked Questions by Drivers</h2>
+      
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="border:1px solid #DFE3E9; border-radius:6px; padding:20px;">
+          <div style="font-size:17.5px; font-weight:700; color:#16234F; margin-bottom:8px;">How much does a UK taxi driver medical cost?</div>
+          <div style="font-size:15px; color:#3E4453; line-height:1.6;">
+            At Just Taxi Medicals, all taxi and private hire medical assessments cost £60 all-inclusive, with no hidden fees for vision testing or form stamping. You can pay on arrival at the clinic by cash or card.
+          </div>
+        </div>
+
+        <div style="border:1px solid #DFE3E9; border-radius:6px; padding:20px;">
+          <div style="font-size:17.5px; font-weight:700; color:#16234F; margin-bottom:8px;">Will my local council accept a medical from your doctors?</div>
+          <div style="font-size:15px; color:#3E4453; line-height:1.6;">
+            Yes. Our doctors conduct examinations strictly in line with statutory DVLA Group 2 medical standards. Major licensing authorities including the City of Wolverhampton Council, Transport for London (TfL), Birmingham City Council, and Manchester City Council accept our completed certificates when accompanied by your NHS Summary Care Record (SCR).
+          </div>
+        </div>
+
+        <div style="border:1px solid #DFE3E9; border-radius:6px; padding:20px;">
+          <div style="font-size:17.5px; font-weight:700; color:#16234F; margin-bottom:8px;">What are the eyesight requirements to pass a taxi medical?</div>
+          <div style="font-size:15px; color:#3E4453; line-height:1.6;">
+            Under statutory DVLA Group 2 rules, you must achieve visual acuity of at least 6/7.5 on a Snellen chart in your better eye and at least 6/60 in the other eye (with glasses or contact lenses if worn). Your horizontal visual field must be at least 160 degrees.
+          </div>
+        </div>
+
+        <div style="border:1px solid #DFE3E9; border-radius:6px; padding:20px;">
+          <div style="font-size:17.5px; font-weight:700; color:#16234F; margin-bottom:8px;">What happens if my blood pressure is high on the day?</div>
+          <div style="font-size:15px; color:#3E4453; line-height:1.6;">
+            To pass under Group 2 criteria, blood pressure must be consistently below 180/100 mmHg. If your initial reading is elevated due to white-coat stress, our doctors will let you rest for 10 to 15 minutes and take up to three repeat readings before any decision is made.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CONVERSION BAR -->
+  <section style="background:#1C5FA8; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:32px; font-weight:800; margin:0 0 12px; color:#fff;">Need Your Taxi Medical Form Signed This Week?</h2>
+      <p style="font-size:18px; color:#CFDEEF; margin:0 0 24px;">
+        Appointments available daily across our nationwide network. Book online in 60 seconds or call our friendly doctor dispatch desk.
+      </p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:16px;">
+        <button onclick="openBookingModal()" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+          Book Appointment (£60)
+        </button>
+        <a href="tel:03300589690" style="background:#fff; color:#16234F; text-decoration:none; font-size:16px; font-weight:800; padding:14px 28px; border-radius:4px; display:inline-flex; align-items:center; gap:8px;">
+          <span>📞</span> Call 0330 058 9690
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    function handleQuickBook() {
+      const council = document.getElementById('quickCouncil').value;
+      const clinic = document.getElementById('quickClinic').value;
+      openBookingModal(council, 'Taxi Medical (£60)');
+      const clinicSelect = document.getElementById('clinicSelect');
+      if (clinicSelect) clinicSelect.value = clinic;
+    }
+  </script>
+
+</Layout>

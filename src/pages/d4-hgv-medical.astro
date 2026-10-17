@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "D4 HGV Medical £60 | Official DVLA Lorry Driver Medicals";
+const pageDescription = "Book your D4 HGV / LGV lorry driver medical for £60. Official DVLA D4 form completed by GMC-registered doctors for Class 1 (C+E) and Class 2 (C) licences. Pay on arrival.";
+
+const breadcrumbs = [
+  { name: "D4 HGV Medical", url: "/d4-hgv-medical" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs}>
+  
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="font-size:13.5px; font-weight:700; color:#CFDEEF; margin-bottom:12px;">
+        <a href="/" style="color:#CFDEEF; text-decoration:none;">Home</a> &nbsp;/&nbsp; <span style="color:#F5A623;">D4 HGV Medical</span>
+      </div>
+
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+        <span>🚛</span> Official DVLA D4 Examination
+      </div>
+      <h1 style="font-size:clamp(30px, 2.8vw + 16px, 44px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+        D4 HGV & Lorry Driver Medicals <span style="color:#F5A623;">£60</span>
+      </h1>
+      <p style="font-size:17.5px; line-height:1.6; color:#CFDEEF; margin:0 0 20px; max-width:680px;">
+        Official DVLA D4 medical assessments for provisional lorry drivers, HGV Class 1 (Cat C+E), Class 2 (Cat C), and 5-yearly commercial licence renewals.
+      </p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:14px;">
+        <button onclick="openBookingModal('DVLA Standard D4', 'D4 HGV Medical (£60)')" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 28px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.35);">
+          Book D4 Medical — £60
+        </button>
+        <a href="tel:03300589690" style="background:rgba(255,255,255,0.12); color:#fff; text-decoration:none; font-size:15.5px; font-weight:700; padding:14px 22px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); display:inline-flex; align-items:center; gap:8px;">
+          <span>📞</span> Call 0330 058 9690
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- YMYL REFERENCE -->
+  <section style="max-width:1100px; margin:30px auto 0; padding:0 20px;">
+    <div class="clinical-factcheck-box">
+      <div class="clinical-factcheck-icon">🛡️</div>
+      <div class="clinical-factcheck-content">
+        <strong>Statutory DVLA Notice:</strong>
+        All commercial lorry and heavy fleet assessments are completed using the 
+        <a href="https://www.gov.uk/government/publications/d4-medical-examination-report" target="_blank" rel="noopener">Official DVLA D4 Medical Examination Report (GOV.UK)</a>. 
+        Examinations follow statutory Group 2 medical guidelines issued by the Driver and Vehicle Licensing Agency (DVLA).
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section style="max-width:1100px; margin:40px auto; padding:0 20px;">
+    <h2 style="font-size:28px; font-weight:800; color:#16234F; margin:0 0 20px;">Why UK HGV Drivers Choose Just Taxi Medicals</h2>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+      <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:22px;">
+        <div style="font-size:20px; font-weight:700; color:#16234F; margin-bottom:8px;">✓ Blank D4 Forms Provided</div>
+        <p style="font-size:14.5px; color:#3E4453; line-height:1.5; margin:0;">
+          Do not worry if you do not have a paper D4 form. We keep official pre-printed DVLA D4 forms and D2 application packs in all our clinics.
+        </p>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:22px;">
+        <div style="font-size:20px; font-weight:700; color:#16234F; margin-bottom:8px;">✓ Full Vision Assessment Included</div>
+        <p style="font-size:14.5px; color:#3E4453; line-height:1.5; margin:0;">
+          The D4 form includes a comprehensive eye test section. Our GMC doctors test your Snellen acuity and peripheral vision without sending you to an expensive optician.
+        </p>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:22px;">
+        <div style="font-size:20px; font-weight:700; color:#16234F; margin-bottom:8px;">✓ Weekend & Evening Slots</div>
+        <p style="font-size:14.5px; color:#3E4453; line-height:1.5; margin:0;">
+          We know long-distance truckers work unsocial hours. We offer Saturday, Sunday, and early evening appointment slots across our clinic network.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:28px; font-weight:800; color:#fff; margin:0 0 12px;">Book Your D4 HGV Medical Today</h2>
+      <p style="font-size:16.5px; color:#CFDEEF; margin:0 0 20px;">
+        Fixed £60 all-inclusive fee. Pay on arrival by card or cash.
+      </p>
+      <button onclick="openBookingModal('DVLA Standard D4', 'D4 HGV Medical (£60)')" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book D4 Medical (£60)
+      </button>
+    </div>
+  </section>
+
+</Layout>

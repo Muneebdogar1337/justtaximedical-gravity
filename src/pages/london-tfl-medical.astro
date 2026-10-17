@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "London TfL PCO Medical £60 | TPH/204 Approved GMC Doctors";
+const pageDescription = "Book your Transport for London (TfL) private hire driver medical (TPH/204) for £60. Fully approved GMC doctors, free eye test, and medical history review. Pay on arrival.";
+
+const breadcrumbs = [
+  { name: "Council Licensing", url: "/taxi-medical-form-downloads" },
+  { name: "London TfL", url: "/london-tfl-medical" }
+];
+
+const medicalTestSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalTest",
+  "name": "Transport for London (TfL) PCO Driver Medical Examination",
+  "description": "Statutory DVLA Group 2 medical assessment on official TfL TPH/204 declaration for London private hire and black cab driver licensing.",
+  "provider": {
+    "@id": "https://justtaximedicals.co.uk/#organization"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "60",
+    "priceCurrency": "GBP",
+    "availability": "https://schema.org/InStock",
+    "url": "https://justtaximedicals.co.uk/london-tfl-medical"
+  }
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs} extraSchema={medicalTestSchema}>
+  
+  <!-- HERO SECTION -->
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="font-size:13.5px; font-weight:700; color:#CFDEEF; margin-bottom:12px;">
+        <a href="/" style="color:#CFDEEF; text-decoration:none;">Home</a> &nbsp;/&nbsp; Council Licensing &nbsp;/&nbsp; <span style="color:#F5A623;">London TfL PCO</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:36px; align-items:center;">
+        <div>
+          <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+            <span>🇬🇧</span> Official TfL TPH/204 Form Completed
+          </div>
+          <h1 style="font-size:clamp(30px, 2.8vw + 16px, 44px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+            London TfL PCO Medical <span style="color:#F5A623;">£60</span>
+          </h1>
+          <p style="font-size:17px; line-height:1.6; color:#CFDEEF; margin:0 0 24px; max-width:540px;">
+            Official Transport for London (TfL) private hire driver medical examination. Completed on the mandatory TPH/204 declaration by registered GMC doctors.
+          </p>
+
+          <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:28px;">
+            <div style="background:rgba(255,255,255,0.08); padding:8px 14px; border-radius:4px; font-size:13.5px; border:1px solid rgba(255,255,255,0.15);">
+              ✓ Official TfL TPH/204 Compliant
+            </div>
+            <div style="background:rgba(255,255,255,0.08); padding:8px 14px; border-radius:4px; font-size:13.5px; border:1px solid rgba(255,255,255,0.15);">
+              ✓ Eye Test Included on Snellen Chart
+            </div>
+            <div style="background:rgba(255,255,255,0.08); padding:8px 14px; border-radius:4px; font-size:13.5px; border:1px solid rgba(255,255,255,0.15);">
+              ✓ Pay on Arrival (£60 Flat)
+            </div>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:14px;">
+            <button onclick="openBookingModal('Transport for London (TfL)', 'Taxi Medical (£60)')" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 28px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.35);">
+              Book London TfL Medical — £60
+            </button>
+            <a href="tel:03300589690" style="background:rgba(255,255,255,0.12); color:#fff; text-decoration:none; font-size:15.5px; font-weight:700; padding:14px 22px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); display:inline-flex; align-items:center; gap:8px;">
+              <span>📞</span> Call 0330 058 9690
+            </a>
+          </div>
+        </div>
+
+        <!-- TfL Summary Card -->
+        <div style="background:#fff; color:#222530; border-radius:8px; padding:24px; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
+          <div style="font-size:18px; font-weight:800; color:#16234F; margin-bottom:12px; border-bottom:1px solid #DFE3E9; padding-bottom:10px;">
+            TfL Licensing Medical Essentials
+          </div>
+          
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; line-height:1.9;">
+            <li><strong>Medical Form:</strong> TfL TPH/204 Medical Declaration</li>
+            <li><strong>Standard:</strong> DVLA Group 2 (Higher Medical Standard)</li>
+            <li><strong>Vision:</strong> 6/7.5 better eye, 6/60 worse eye</li>
+            <li><strong>Blood Pressure:</strong> Strictly under 180/100 mmHg</li>
+            <li><strong>Medical History:</strong> Summary Care Record with 3+ years notes</li>
+            <li><strong>Independent Doctors:</strong> Permitted with full medical records</li>
+          </ul>
+
+          <div style="margin-top:16px; background:#EDF3FA; padding:12px; border-radius:4px; font-size:13px; color:#16234F;">
+            💡 <em>Did you know? Under TfL rules, medical forms are only valid for 4 months from the date of the doctor's physical examination.</em>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- YMYL REFERENCE -->
+  <section style="max-width:1200px; margin:28px auto 0; padding:0 20px;">
+    <div class="clinical-factcheck-box">
+      <div class="clinical-factcheck-icon">🛡️</div>
+      <div class="clinical-factcheck-content">
+        <strong>Statutory Transport for London Policy Reference:</strong>
+        Medical assessments for London private hire (PCO) and Hackney carriage licensing are governed by 
+        <a href="https://tfl.gov.uk/info-for/taxis-and-private-hire/licensing/private-hire-driver-licence" target="_blank" rel="noopener">Transport for London Private Hire Regulations</a>. 
+        Clinical benchmarks correspond to statutory 
+        <a href="https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals" target="_blank" rel="noopener">DVLA Group 2 Medical Standards</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- THE 5 DATA POINTS -->
+  <section style="max-width:1200px; margin:40px auto; padding:0 20px;">
+    <h2 style="font-size:28px; font-weight:800; color:#16234F; margin:0 0 20px;">
+      Transport for London (TfL) Medical Examination Requirements
+    </h2>
+
+    <div class="council-data-grid">
+      <div class="council-data-item">
+        <div class="council-data-label">Official Medical Form</div>
+        <div class="council-data-val">TfL Form TPH/204</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          The official 'Medical Declaration for a Private Hire or Hackney Carriage Driver'. Must be stamped with the clinic's official stamp.
+        </p>
+      </div>
+
+      <div class="council-data-item">
+        <div class="council-data-label">Medical History Check</div>
+        <div class="council-data-val">Full Summary Care Record</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          TfL requires the examining doctor to examine your medical summary to verify cardiovascular, endocrine, and neurological history.
+        </p>
+      </div>
+
+      <div class="council-data-item">
+        <div class="council-data-label">TfL Licensing Headquarters</div>
+        <div class="council-data-val">230 Blackfriars Road, London</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          London SE1 8NW. Most drivers submit forms electronically through the TfL Driver Portal during the online PCO application.
+        </p>
+      </div>
+
+      <div class="council-data-item">
+        <div class="council-data-label">Medical Standards Authority</div>
+        <div class="council-data-val">GMC Registered Doctor Acceptance</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          Examinations can be completed by any GMC licensed physician provided they have full sight of your electronic GP medical summary.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:30px; font-weight:800; color:#fff; margin:0 0 12px;">Get Your TfL PCO Medical Completed Fast</h2>
+      <p style="font-size:17px; color:#CFDEEF; margin:0 0 24px;">
+        Fast appointments, zero upfront card fee, and full GMC doctor compliance.
+      </p>
+      <button onclick="openBookingModal('Transport for London (TfL)', 'Taxi Medical (£60)')" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book TfL Medical (£60)
+      </button>
+    </div>
+  </section>
+
+</Layout>

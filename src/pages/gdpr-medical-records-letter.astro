@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Free GP Medical Records GDPR Letter Template | Taxi Medicals";
+const pageDescription = "Free downloadable Subject Access Request (SAR) letter template for UK taxi drivers to obtain their NHS Summary Care Record without paying GP surgery fees.";
+
+const breadcrumbs = [
+  { name: "GP Records Guide", url: "/summary-care-record-guide" },
+  { name: "Free GDPR Letter", url: "/gdpr-medical-records-letter" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs}>
+  
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:900px; margin:0 auto;">
+      <div style="font-size:13.5px; font-weight:700; color:#CFDEEF; margin-bottom:12px;">
+        <a href="/" style="color:#CFDEEF; text-decoration:none;">Home</a> &nbsp;/&nbsp; <a href="/summary-care-record-guide" style="color:#CFDEEF; text-decoration:none;">GP Records Guide</a> &nbsp;/&nbsp; <span style="color:#F5A623;">GDPR SAR Letter</span>
+      </div>
+
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+        <span>📄</span> Free Driver Tool
+      </div>
+      <h1 style="font-size:clamp(28px, 2.6vw + 16px, 42px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+        Free GP Subject Access Request (SAR) Letter
+      </h1>
+      <p style="font-size:17px; line-height:1.6; color:#CFDEEF; margin:0; max-width:680px;">
+        Copy or print this letter to give to your NHS GP surgery receptionist. It cites the exact statutory provisions under UK GDPR confirming your right to a free medical record summary.
+      </p>
+    </div>
+  </section>
+
+  <!-- YMYL REFERENCE -->
+  <section style="max-width:900px; margin:30px auto 0; padding:0 20px;">
+    <div class="clinical-factcheck-box">
+      <div class="clinical-factcheck-icon">🛡️</div>
+      <div class="clinical-factcheck-content">
+        <strong>Statutory Authority Notice:</strong>
+        Under Article 15 of the UK General Data Protection Regulation and the 
+        <a href="https://ico.org.uk/for-the-public/your-right-to-get-copies-of-your-data/" target="_blank" rel="noopener">Information Commissioner's Office (ICO) Right of Access Guidance</a>, 
+        controllers (including NHS GP surgeries) must provide a copy of personal health information free of charge. Charging fees for standard electronic health record summaries was abolished in May 2018.
+      </div>
+    </div>
+  </section>
+
+  <!-- THE LETTER TEMPLATE -->
+  <section style="max-width:900px; margin:40px auto; padding:0 20px;">
+    
+    <div style="background:#fff; border:2px solid #DFE3E9; border-radius:8px; padding:32px; box-shadow:0 4px 12px rgba(0,0,0,0.05); font-family:monospace; font-size:14.5px; line-height:1.7; color:#222530; position:relative;">
+      
+      <div style="position:absolute; top:20px; right:20px;">
+        <button onclick="copyLetter()" id="copyBtn" style="background:#1C5FA8; color:#fff; font-size:13px; font-weight:700; font-family:var(--font); padding:8px 16px; border-radius:4px; border:none; cursor:pointer;">
+          📋 Copy Letter Text
+        </button>
+      </div>
+
+      <div id="letterContent">
+To: The Practice Manager / Reception Team<br/>
+[Name of Your NHS GP Surgery]<br/>
+[Surgery Street Address]<br/>
+[Town / City and Postcode]<br/><br/>
+
+Date: [Today's Date]<br/><br/>
+
+Re: Formal Subject Access Request (SAR) — Free Medical Records Summary<br/>
+Patient Full Name: [Your Full Name]<br/>
+Date of Birth: [Your Date of Birth]<br/>
+NHS Number: [Your NHS Number if known]<br/>
+Registered Address: [Your Home Address]<br/><br/>
+
+Dear Practice Manager,<br/><br/>
+
+I am writing to submit a formal Subject Access Request under Article 15 of the UK General Data Protection Regulation (UK GDPR) and Section 45 of the Data Protection Act 2018.<br/><br/>
+
+Please provide me with a printed copy of my <strong>Summary Care Record (SCR) with Additional Information</strong> (or an equivalent electronic GP medical records summary). This should include my:<br/>
+1. Current and repeat medication list<br/>
+2. Recorded allergies and adverse reactions<br/>
+3. Significant past medical history, diagnoses, and hospital consultations<br/><br/>
+
+Please note that under the UK GDPR and official guidance published by the Information Commissioner's Office (ICO), patients have an absolute legal right to receive a copy of their personal health data free of charge. No administration fee can be requested for this standard summary.<br/><br/>
+
+I require this document to support my statutory occupational driver licensing renewal. Given that this is an electronic summary printout generated from your clinical system (EMIS / SystmOne), I kindly request that this is made available for collection at reception within 2 to 3 working days.<br/><br/>
+
+Thank you for your assistance.<br/><br/>
+
+Yours sincerely,<br/><br/>
+
+___________________________<br/>
+[Your Signature]<br/>
+[Your Contact Telephone Number]
+      </div>
+
+    </div>
+
+    <!-- Instructions Below -->
+    <div style="margin-top:28px; background:#F5F7F9; border:1px solid #DFE3E9; border-radius:6px; padding:20px;">
+      <h3 style="font-size:18px; font-weight:700; color:#16234F; margin:0 0 10px;">How to Use This Template</h3>
+      <ol style="margin:0; padding-left:20px; font-size:14.5px; color:#3E4453; line-height:1.6;">
+        <li>Click <strong>Copy Letter Text</strong> above or copy it into a word processor.</li>
+        <li>Fill in your GP surgery name, your personal details, and your date of birth.</li>
+        <li>Sign the letter and hand it to your GP receptionist in person.</li>
+        <li>Bring the resulting summary printout to your appointment at Just Taxi Medicals.</li>
+      </ol>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:28px; font-weight:800; color:#fff; margin:0 0 12px;">Need Your Taxi Medical Booked?</h2>
+      <p style="font-size:16.5px; color:#CFDEEF; margin:0 0 20px;">
+        Fixed £60 all-inclusive fee. Pay on arrival by card or cash.
+      </p>
+      <button onclick="openBookingModal()" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book Appointment (£60)
+      </button>
+    </div>
+  </section>
+
+  <script is:inline>
+    function copyLetter() {
+      const text = document.getElementById('letterContent').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.innerText = '✓ Copied to Clipboard!';
+        setTimeout(() => { btn.innerText = '📋 Copy Letter Text'; }, 3000);
+      });
+    }
+  </script>
+
+</Layout>

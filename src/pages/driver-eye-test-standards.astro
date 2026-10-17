@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Taxi Medical Eye Test Standards | DVLA 6/7.5 Snellen Requirements";
+const pageDescription = "Everything you need to know about the eyesight requirements for a UK taxi and private hire medical: Snellen 6/7.5 and 6/60 standards, corrective lenses, and visual field tests.";
+
+const breadcrumbs = [
+  { name: "Medical Standards", url: "/group-2-medical-standards" },
+  { name: "Eyesight Standards", url: "/driver-eye-test-standards" }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "DVLA Group 2 Eyesight & Visual Acuity Standards",
+  "url": "https://justtaximedicals.co.uk/driver-eye-test-standards",
+  "reviewedBy": {
+    "@type": "Physician",
+    "name": "Dr Ali Hassan Cheema",
+    "identifier": "8022686",
+    "sameAs": "https://www.gmc-uk.org/doctor/8022686"
+  },
+  "citation": [
+    "https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals",
+    "https://www.nhs.uk/nhs-services/opticians/visiting-an-optician/"
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs} extraSchema={schema}>
+  
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="font-size:13.5px; font-weight:700; color:#CFDEEF; margin-bottom:12px;">
+        <a href="/" style="color:#CFDEEF; text-decoration:none;">Home</a> &nbsp;/&nbsp; <a href="/group-2-medical-standards" style="color:#CFDEEF; text-decoration:none;">Medical Standards</a> &nbsp;/&nbsp; <span style="color:#F5A623;">Eyesight Standards</span>
+      </div>
+
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+        <span>👁️</span> Snellen Chart & Visual Field Rules
+      </div>
+      <h1 style="font-size:clamp(30px, 2.8vw + 16px, 44px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+        Taxi Medical Eye Test Requirements Explained
+      </h1>
+      <p style="font-size:17.5px; line-height:1.6; color:#CFDEEF; margin:0; max-width:680px;">
+        A breakdown of the statutory DVLA Group 2 vision criteria: the 6/7.5 and 6/60 Snellen benchmarks, corrective lens limits (+8 dioptres), and how to pass without delay.
+      </p>
+    </div>
+  </section>
+
+  <!-- YMYL REFERENCE -->
+  <section style="max-width:1100px; margin:30px auto 0; padding:0 20px;">
+    <div class="clinical-factcheck-box">
+      <div class="clinical-factcheck-icon">🛡️</div>
+      <div class="clinical-factcheck-content">
+        <strong>Statutory Eyesight Guidance:</strong>
+        Vision criteria for UK taxi, private hire, and commercial drivers are mandated by Appendix 1 of the 
+        <a href="https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals" target="_blank" rel="noopener">DVLA Assessing Fitness to Drive Guide</a>. 
+        General public eye test guidelines can be reviewed via the 
+        <a href="https://www.nhs.uk/nhs-services/opticians/visiting-an-optician/" target="_blank" rel="noopener">NHS Guide to Opticians and Eye Tests</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- CRITERIA CARDS -->
+  <section style="max-width:1100px; margin:40px auto; padding:0 20px;">
+    <h2 style="font-size:28px; font-weight:800; color:#16234F; margin:0 0 20px;">The Three Statutory Eyesight Criteria</h2>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px;">
+      
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:24px;">
+        <div style="font-size:32px; font-weight:900; color:#1C5FA8; margin-bottom:8px;">6/7.5 & 6/60</div>
+        <h3 style="font-size:18px; font-weight:700; color:#16234F; margin:0 0 8px;">Visual Acuity Benchmark</h3>
+        <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0;">
+          You must reach at least <strong>6/7.5 on a Snellen chart in your better eye</strong> and at least <strong>6/60 in your other eye</strong>. This can be achieved with or without corrective glasses or contact lenses.
+        </p>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:24px;">
+        <div style="font-size:32px; font-weight:900; color:#1C5FA8; margin-bottom:8px;">160° Field</div>
+        <h3 style="font-size:18px; font-weight:700; color:#16234F; margin:0 0 8px;">Horizontal Visual Field</h3>
+        <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0;">
+          You must have a horizontal visual field of at least <strong>160 degrees</strong>, with an extension of at least 70 degrees left and right, and 30 degrees up and down. No significant visual defects are permitted within the central 30 degrees.
+        </p>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DFE3E9; border-top:4px solid #1C5FA8; border-radius:6px; padding:24px;">
+        <div style="font-size:32px; font-weight:900; color:#1C5FA8; margin-bottom:8px;">+8 Dioptres</div>
+        <h3 style="font-size:18px; font-weight:700; color:#16234F; margin:0 0 8px;">Corrective Lens Power Limit</h3>
+        <p style="font-size:14.5px; color:#3E4453; line-height:1.6; margin:0;">
+          If corrective glasses are required to achieve the visual acuity standard, the refractive power in the corrective lenses cannot exceed <strong>+8 dioptres</strong> in any meridian (this limit does not apply to contact lenses).
+        </p>
+      </div>
+
+    </div>
+
+    <!-- What to bring for eye test -->
+    <div style="background:#F5F7F9; border:1px solid #DFE3E9; border-radius:6px; padding:24px; margin-top:32px;">
+      <h3 style="font-size:20px; font-weight:700; color:#16234F; margin:0 0 12px;">What to Bring If You Wear Glasses or Contacts</h3>
+      <ul style="margin:0; padding-left:20px; font-size:15px; color:#3E4453; line-height:1.7;">
+        <li>Bring the glasses or contact lenses you wear while driving.</li>
+        <li>Bring your <strong>most recent optician prescription</strong> (issued within the last 12 months).</li>
+        <li>If you wear contact lenses, be prepared to remove them if the doctor needs to test your uncorrected vision.</li>
+        <li>Ensure your lenses are clean and free of deep scratches.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:28px; font-weight:800; color:#fff; margin:0 0 12px;">Free Snellen Eye Test Included With Every Medical</h2>
+      <p style="font-size:16.5px; color:#CFDEEF; margin:0 0 20px;">
+        Unlike some providers who charge £25 extra for optician sign-offs, our £60 fee covers your full eye assessment.
+      </p>
+      <button onclick="openBookingModal()" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book Appointment (£60)
+      </button>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Taxi Medical Cost UK £60 Fixed | Transparent Pricing Breakdown";
+const pageDescription = "Compare UK driver medical costs. Fixed £60 all-inclusive fee at Just Taxi Medicals vs £120-£250 at NHS GP surgeries. Free eye test and pay on arrival.";
+
+const breadcrumbs = [
+  { name: "Pricing", url: "/pricing" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs}>
+  
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1000px; margin:0 auto; text-align:center;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+        <span>💷</span> Transparent Driver Pricing
+      </div>
+      <h1 style="font-size:clamp(30px, 2.8vw + 16px, 44px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+        One Fixed Price: <span style="color:#F5A623;">£60 All-Inclusive</span>
+      </h1>
+      <p style="font-size:17.5px; line-height:1.6; color:#CFDEEF; margin:0 auto; max-width:640px;">
+        No hidden costs, no surprise optician fees, and no upfront payment required. Conducted by registered GMC doctors.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section style="max-width:1000px; margin:40px auto; padding:0 20px;">
+    
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; background:#fff; border:1px solid #DFE3E9; font-size:15px; text-align:left;">
+        <thead>
+          <tr style="background:#16234F; color:#fff;">
+            <th style="padding:14px 16px; font-weight:700;">Service Feature</th>
+            <th style="padding:14px 16px; font-weight:700; background:#0F7A5A; color:#fff;">Just Taxi Medicals</th>
+            <th style="padding:14px 16px; font-weight:700; color:#CFDEEF;">Typical NHS GP Surgery</th>
+            <th style="padding:14px 16px; font-weight:700; color:#CFDEEF;">National Brokers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #DFE3E9;">
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">Standard Assessment Fee</td>
+            <td style="padding:14px 16px; font-weight:800; color:#0F7A5A; font-size:18px;">£60 Flat</td>
+            <td style="padding:14px 16px; color:#C62828;">£120 – £250</td>
+            <td style="padding:14px 16px;">£65 – £85</td>
+          </tr>
+          <tr style="border-bottom:1px solid #DFE3E9; background:#F9FAFB;">
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">Snellen Eye Test Included</td>
+            <td style="padding:14px 16px; font-weight:700; color:#0F7A5A;">✓ Free Included</td>
+            <td style="padding:14px 16px;">Often refers to optician (£25 extra)</td>
+            <td style="padding:14px 16px;">Sometimes extra charge</td>
+          </tr>
+          <tr style="border-bottom:1px solid #DFE3E9;">
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">Appointment Waiting Time</td>
+            <td style="padding:14px 16px; font-weight:700; color:#0F7A5A;">Same-Day / Next-Day</td>
+            <td style="padding:14px 16px; color:#C62828;">3 to 6 Weeks Delay</td>
+            <td style="padding:14px 16px;">3 to 7 Days</td>
+          </tr>
+          <tr style="border-bottom:1px solid #DFE3E9; background:#F9FAFB;">
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">White-Coat BP Rest Retest</td>
+            <td style="padding:14px 16px; font-weight:700; color:#0F7A5A;">✓ Free 10-Min Rest & 3 Readings</td>
+            <td style="padding:14px 16px;">Single reading fail</td>
+            <td style="padding:14px 16px;">Varies by locum</td>
+          </tr>
+          <tr style="border-bottom:1px solid #DFE3E9;">
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">Payment Options</td>
+            <td style="padding:14px 16px; font-weight:700; color:#0F7A5A;">Pay on Arrival (Cash/Card)</td>
+            <td style="padding:14px 16px;">Strict upfront payment</td>
+            <td style="padding:14px 16px;">Upfront card payment only</td>
+          </tr>
+          <tr>
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">GMC Registered Doctor</td>
+            <td style="padding:14px 16px; font-weight:700; color:#0F7A5A;">✓ Yes (GMC #6049394 / #8022686)</td>
+            <td style="padding:14px 16px;">✓ Yes</td>
+            <td style="padding:14px 16px;">✓ Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- What is included box -->
+    <div style="background:#EDF3FA; border:1px solid #CFDEEF; border-radius:6px; padding:24px; margin-top:32px;">
+      <h3 style="font-size:20px; font-weight:800; color:#16234F; margin:0 0 12px;">What is Included in Your £60 Fee?</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; font-size:14.5px; color:#222530;">
+        <div>✓ Full physical examination</div>
+        <div>✓ Snellen eyesight & visual field test</div>
+        <div>✓ Resting blood pressure measurement</div>
+        <div>✓ Free repeat BP check if nervous</div>
+        <div>✓ NHS Summary Care Record clinical review</div>
+        <div>✓ Urine dipstick test (if required by council)</div>
+        <div>✓ Official council form completion & signing</div>
+        <div>✓ Official clinic verification rubber stamp</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:28px; font-weight:800; color:#fff; margin:0 0 12px;">Book Your £60 Medical in 60 Seconds</h2>
+      <p style="font-size:16.5px; color:#CFDEEF; margin:0 0 20px;">
+        Zero card fees upfront. Pay when you arrive at the clinic.
+      </p>
+      <button onclick="openBookingModal()" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book Medical Appointment (£60)
+      </button>
+    </div>
+  </section>
+
+</Layout>

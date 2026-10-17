@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Wolverhampton Taxi Medical £60 | Approved GMC Doctors | Same Day";
+const pageDescription = "Book your City of Wolverhampton Council taxi driver medical for £60. Fully approved GMC doctors, free eye test, and complete Summary Care Record review. Pay on arrival.";
+
+const breadcrumbs = [
+  { name: "Council Licensing", url: "/taxi-medical-form-downloads" },
+  { name: "Wolverhampton Council", url: "/wolverhampton-taxi-medical" }
+];
+
+const medicalTestSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalTest",
+  "name": "Wolverhampton Council Private Hire Driver Medical Examination",
+  "description": "Statutory DVLA Group 2 driver medical assessment conducted in accordance with City of Wolverhampton Council Hackney Carriage and Private Hire Licensing Policy.",
+  "provider": {
+    "@id": "https://justtaximedicals.co.uk/#organization"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "60",
+    "priceCurrency": "GBP",
+    "availability": "https://schema.org/InStock",
+    "url": "https://justtaximedicals.co.uk/wolverhampton-taxi-medical"
+  }
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs} extraSchema={medicalTestSchema}>
+  
+  <!-- HERO SECTION -->
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="font-size:13.5px; font-weight:700; color:#CFDEEF; margin-bottom:12px;">
+        <a href="/" style="color:#CFDEEF; text-decoration:none;">Home</a> &nbsp;/&nbsp; Council Licensing &nbsp;/&nbsp; <span style="color:#F5A623;">Wolverhampton</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:36px; align-items:center;">
+        <div>
+          <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+            <span>🏛️</span> City of Wolverhampton Council Approved Standard
+          </div>
+          <h1 style="font-size:clamp(30px, 2.8vw + 16px, 44px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+            Wolverhampton Taxi Medical <span style="color:#F5A623;">£60</span>
+          </h1>
+          <p style="font-size:17px; line-height:1.6; color:#CFDEEF; margin:0 0 24px; max-width:540px;">
+            Get your Wolverhampton private hire medical completed by GMC-registered doctors. We complete your official medical certificate with full NHS Summary Care Record (SCR) verification.
+          </p>
+
+          <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:28px;">
+            <div style="background:rgba(255,255,255,0.08); padding:8px 14px; border-radius:4px; font-size:13.5px; border:1px solid rgba(255,255,255,0.15);">
+              ✓ 100% Accepted by Wolverhampton Licensing
+            </div>
+            <div style="background:rgba(255,255,255,0.08); padding:8px 14px; border-radius:4px; font-size:13.5px; border:1px solid rgba(255,255,255,0.15);">
+              ✓ Free Snellen Eye Test Included
+            </div>
+            <div style="background:rgba(255,255,255,0.08); padding:8px 14px; border-radius:4px; font-size:13.5px; border:1px solid rgba(255,255,255,0.15);">
+              ✓ Pay on Arrival (£60 Cash/Card)
+            </div>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:14px;">
+            <button onclick="openBookingModal('Wolverhampton Council', 'Taxi Medical (£60)')" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 28px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.35);">
+              Book Wolverhampton Medical — £60
+            </button>
+            <a href="tel:03300589690" style="background:rgba(255,255,255,0.12); color:#fff; text-decoration:none; font-size:15.5px; font-weight:700; padding:14px 22px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); display:inline-flex; align-items:center; gap:8px;">
+              <span>📞</span> Call 0330 058 9690
+            </a>
+          </div>
+        </div>
+
+        <!-- Summary Card -->
+        <div style="background:#fff; color:#222530; border-radius:8px; padding:24px; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
+          <div style="font-size:18px; font-weight:800; color:#16234F; margin-bottom:12px; border-bottom:1px solid #DFE3E9; padding-bottom:10px;">
+            Wolverhampton Licensing Quick Facts
+          </div>
+          
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; line-height:1.9;">
+            <li><strong>Medical Standard:</strong> DVLA Group 2 (Higher Medical Standard)</li>
+            <li><strong>Medical Form:</strong> City of Wolverhampton Driver Certificate</li>
+            <li><strong>GP Records:</strong> Summary Care Record (SCR) with full history</li>
+            <li><strong>Exam Validity:</strong> Form valid for 4 months from signing date</li>
+            <li><strong>Independent Doctors:</strong> <strong>100% Permitted</strong> under council bylaws</li>
+            <li><strong>Average Turnaround:</strong> 10-15 working days once uploaded</li>
+          </ul>
+
+          <div style="margin-top:16px; background:#EDF3FA; padding:12px; border-radius:4px; font-size:13px; color:#16234F;">
+            💡 <em>Our examining doctors (Dr Ayyaz Sultan GMC #6049394 & Dr Ali Hassan Cheema GMC #8022686) complete hundreds of Wolverhampton certificates monthly.</em>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- YMYL CLINICAL REFERENCE -->
+  <section style="max-width:1200px; margin:28px auto 0; padding:0 20px;">
+    <div class="clinical-factcheck-box">
+      <div class="clinical-factcheck-icon">🛡️</div>
+      <div class="clinical-factcheck-content">
+        <strong>Statutory Council Policy Reference:</strong>
+        This examination is administered in compliance with Section 57 of the <em>Local Government (Miscellaneous Provisions) Act 1976</em> and the official 
+        <a href="https://www.wolverhampton.gov.uk/licensing/taxi-licences" target="_blank" rel="noopener">City of Wolverhampton Council Hackney Carriage and Private Hire Licensing Policy</a>. 
+        Clinical fitness criteria adhere to the 
+        <a href="https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals" target="_blank" rel="noopener">DVLA Assessing Fitness to Drive Guide</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- THE 5 NON-NEGOTIABLE DATA POINTS FOR WOLVERHAMPTON -->
+  <section style="max-width:1200px; margin:40px auto; padding:0 20px;">
+    <h2 style="font-size:28px; font-weight:800; color:#16234F; margin:0 0 20px;">
+      City of Wolverhampton Council Medical Regulations Explained
+    </h2>
+
+    <div class="council-data-grid">
+      <div class="council-data-item">
+        <div class="council-data-label">Official Medical Form</div>
+        <div class="council-data-val">Wolverhampton Driver Medical Certificate</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          Must be stamped and signed by a GMC registered practitioner who has scrutinized your NHS Summary Care Record.
+        </p>
+      </div>
+
+      <div class="council-data-item">
+        <div class="council-data-label">Medical History Requirement</div>
+        <div class="council-data-val">NHS Summary Care Record (SCR)</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          You must bring your SCR containing medications, allergies, and significant medical history. Free from your GP under GDPR.
+        </p>
+      </div>
+
+      <div class="council-data-item">
+        <div class="council-data-label">Licensing Office Address</div>
+        <div class="council-data-val">Civic Centre, St Peter's Square</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          Wolverhampton WV1 1SH. Most drivers now submit completed scans online via the council's enterprise licensing portal.
+        </p>
+      </div>
+
+      <div class="council-data-item">
+        <div class="council-data-label">Independent Doctor Status</div>
+        <div class="council-data-val">100% Accepted by Council</div>
+        <p style="font-size:13.5px; color:#6B7280; margin:8px 0 0;">
+          Wolverhampton Council does NOT force you to use your own NHS GP. Any GMC registered physician with SCR access is permitted.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP-BY-STEP SUBMISSION GUIDE -->
+  <section style="background:#F5F7F9; border-top:1px solid #DFE3E9; border-bottom:1px solid #DFE3E9; padding:50px 20px;">
+    <div style="max-width:1000px; margin:0 auto;">
+      <h2 style="font-size:28px; font-weight:800; color:#16234F; margin:0 0 24px; text-align:center;">
+        Step-by-Step: Passing Your Wolverhampton Medical
+      </h2>
+
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        
+        <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:20px; display:flex; gap:16px;">
+          <div style="background:#1C5FA8; color:#fff; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0;">1</div>
+          <div>
+            <div style="font-size:17px; font-weight:700; color:#16234F; margin-bottom:4px;">Request Your Free NHS Summary Care Record (SCR)</div>
+            <p style="font-size:14.5px; color:#3E4453; line-height:1.5; margin:0;">
+              Contact your NHS GP surgery receptionist and request a printed copy of your <strong>Summary Care Record with additional information</strong>. Under the Data Protection Act 2018 and UK GDPR, GP surgeries cannot charge for this summary. <a href="/gdpr-medical-records-letter" style="color:#1C5FA8; font-weight:600;">Download our free GP letter template here</a>.
+            </p>
+          </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:20px; display:flex; gap:16px;">
+          <div style="background:#1C5FA8; color:#fff; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0;">2</div>
+          <div>
+            <div style="font-size:17px; font-weight:700; color:#16234F; margin-bottom:4px;">Attend Your 15-Minute Examination</div>
+            <p style="font-size:14.5px; color:#3E4453; line-height:1.5; margin:0;">
+              Bring your driving licence, driving glasses (if worn), latest optician prescription, and your SCR. Our GMC doctor will check your eyesight on the Snellen chart (must achieve 6/7.5 and 6/60), take your resting blood pressure (must be below 180/100 mmHg), and review your medical questionnaire.
+            </p>
+          </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:20px; display:flex; gap:16px;">
+          <div style="background:#1C5FA8; color:#fff; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0;">3</div>
+          <div>
+            <div style="font-size:17px; font-weight:700; color:#16234F; margin-bottom:4px;">Receive Signed Certificate & Upload to Council</div>
+            <p style="font-size:14.5px; color:#3E4453; line-height:1.5; margin:0;">
+              The doctor completes and stamps the official Wolverhampton medical certificate on the day. You take the physical copy home, scan it or photograph it clearly, and upload it straight into your City of Wolverhampton Council online licensing portal.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:30px; font-weight:800; color:#fff; margin:0 0 12px;">Book Your Wolverhampton Taxi Medical Today</h2>
+      <p style="font-size:17px; color:#CFDEEF; margin:0 0 24px;">
+        Fast appointments, zero upfront card fee, and full GMC doctor compliance.
+      </p>
+      <button onclick="openBookingModal('Wolverhampton Council', 'Taxi Medical (£60)')" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book Appointment (£60)
+      </button>
+    </div>
+  </section>
+
+</Layout>

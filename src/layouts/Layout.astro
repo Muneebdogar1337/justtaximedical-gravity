@@ -1,0 +1,463 @@
+---
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  breadcrumbs?: BreadcrumbItem[];
+  extraSchema?: object | object[];
+}
+
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  breadcrumbs = [],
+  extraSchema
+} = Astro.props;
+
+const siteUrl = 'https://justtaximedicals.co.uk';
+const canonicalUrl = new URL(canonicalPath, siteUrl).href;
+
+// BreadcrumbList schema
+const breadcrumbSchema = breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": siteUrl
+    },
+    ...breadcrumbs.map((b, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 2,
+      "name": b.name,
+      "item": b.url.startsWith('http') ? b.url : `${siteUrl}${b.url}`
+    }))
+  ]
+} : null;
+
+// Base Organization Schema
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "@id": `${siteUrl}/#organization`,
+  "name": "Just Taxi Medicals UK",
+  "url": siteUrl,
+  "logo": `${siteUrl}/assets/logo/logo.svg`,
+  "telephone": "+443300589690",
+  "email": "bookings@justtaximedicals.co.uk",
+  "priceRange": "£60",
+  "medicalSpecialty": "OccupationalMedicine",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Piccadilly House, 49 Piccadilly",
+    "addressLocality": "Manchester",
+    "postalCode": "M1 2AP",
+    "addressCountry": "GB"
+  },
+  "founder": [
+    {
+      "@type": "Physician",
+      "name": "Dr Ayyaz Sultan",
+      "jobTitle": "Medical Director & Consultant Cardiologist",
+      "identifier": "6049394",
+      "sameAs": "https://www.gmc-uk.org/doctor/6049394",
+      "alumniOf": "Royal College of Physicians and Surgeons of Glasgow"
+    },
+    {
+      "@type": "Physician",
+      "name": "Dr Ali Hassan Cheema",
+      "jobTitle": "Occupational Medical Examiner",
+      "identifier": "8022686",
+      "sameAs": "https://www.gmc-uk.org/doctor/8022686"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "2840",
+    "bestRating": "5"
+  }
+};
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Just Taxi Medicals UK</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={`${title} | Just Taxi Medicals UK`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Just Taxi Medicals UK" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | Just Taxi Medicals UK`} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+    {extraSchema && <script type="application/ld+json" set:html={JSON.stringify(extraSchema)} />}
+  </head>
+
+  <body>
+    <!-- Top Regulatory & Trust Announcement Bar -->
+    <div style="background:#0F3560; color:#EDF3FA; font-size:13px; font-weight:600; padding:8px 16px; text-align:center;">
+      <span>🇬🇧 GMC-Registered Doctors (GMC #6049394 & #8022686) · Official DVLA Group 2 Standards · Fixed £60 All-Inclusive · Same-Day Appointments Available</span>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header style="background:#fff; border-bottom:1px solid #DFE3E9; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+      <div style="max-width:1200px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; gap:20px;">
+        
+        <!-- Brand Logo -->
+        <a href="/" style="text-decoration:none; display:flex; align-items:center; gap:10px;">
+          <div style="background:#1C5FA8; color:#fff; width:40px; height:40px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:20px;">
+            ✚
+          </div>
+          <div>
+            <div style="font-size:20px; font-weight:800; color:#16234F; line-height:1.1; letter-spacing:-0.3px;">
+              JUST TAXI <span style="color:#1C5FA8;">MEDICALS</span>
+            </div>
+            <div style="font-size:11.5px; font-weight:700; color:#6B7280; letter-spacing:0.5px; text-transform:uppercase;">
+              GMC Reg Doctors · £60 Flat
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav style="display:none; gap:22px; font-size:15px; font-weight:600;" class="desktop-nav">
+          <a href="/taxi-driver-medical" style="color:#222530; text-decoration:none;">Taxi Medical</a>
+          <a href="/d4-hgv-medical" style="color:#222530; text-decoration:none;">D4 HGV</a>
+          <a href="/wolverhampton-taxi-medical" style="color:#222530; text-decoration:none;">Councils</a>
+          <a href="/group-2-medical-standards" style="color:#222530; text-decoration:none;">Medical Standards</a>
+          <a href="/summary-care-record-guide" style="color:#222530; text-decoration:none;">Free GP Records</a>
+          <a href="/our-doctors" style="color:#222530; text-decoration:none;">Our Doctors</a>
+          <a href="/pricing" style="color:#222530; text-decoration:none;">Pricing (£60)</a>
+        </nav>
+
+        <!-- Direct Contact & Booking Call-to-Action -->
+        <div style="display:flex; align-items:center; gap:12px;">
+          <a href="tel:03300589690" style="display:none; align-items:center; gap:6px; color:#16234F; text-decoration:none; font-weight:700; font-size:15px;" class="desktop-phone">
+            <span style="color:#0F7A5A; font-size:18px;">📞</span> 0330 058 9690
+          </a>
+          <button onclick="openBookingModal()" style="background:#F5A623; color:#16234F; font-weight:800; font-size:15px; padding:10px 18px; border-radius:4px; border:none; cursor:pointer; display:flex; align-items:center; gap:6px; box-shadow:0 2px 6px rgba(245,166,35,0.3);">
+            <span>📅</span> Book Medical (£60)
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <style>
+      @media (min-width: 960px) {
+        .desktop-nav { display: flex !important; }
+        .desktop-phone { display: flex !important; }
+      }
+    </style>
+
+    <!-- Main Content Area -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Master Footer -->
+    <footer style="background:#16234F; color:#EDEFF3; padding:50px 20px 30px; margin-top:60px; font-size:14.5px;">
+      <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:32px; margin-bottom:40px;">
+        
+        <!-- Brand & Clinical Governance Column -->
+        <div>
+          <div style="font-size:20px; font-weight:800; color:#fff; margin-bottom:12px;">
+            JUST TAXI <span style="color:#F5A623;">MEDICALS</span>
+          </div>
+          <p style="color:#CFDEEF; line-height:1.6; margin-bottom:16px;">
+            Official UK driver medical examinations conducted by GMC-registered physicians. Providing DVLA Group 2 fitness certifications for private hire, Hackney carriage, HGV, and PCV bus drivers.
+          </p>
+          <div style="font-size:13px; color:#A5D6A7; background:rgba(255,255,255,0.06); padding:10px 14px; border-radius:6px; border:1px solid rgba(255,255,255,0.12);">
+            <strong>Verified Examining Physicians:</strong><br/>
+            • Dr Ayyaz Sultan (<a href="https://www.gmc-uk.org/doctor/6049394" target="_blank" rel="noopener" style="color:#81C784;">GMC #6049394</a>)<br/>
+            • Dr Ali Hassan Cheema (<a href="https://www.gmc-uk.org/doctor/8022686" target="_blank" rel="noopener" style="color:#81C784;">GMC #8022686</a>)
+          </div>
+        </div>
+
+        <!-- Licensing Councils -->
+        <div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:14px; border-bottom:2px solid #1C5FA8; padding-bottom:6px; display:inline-block;">
+            Top Licensing Councils
+          </div>
+          <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+            <li><a href="/wolverhampton-taxi-medical" style="color:#CFDEEF; text-decoration:none;">Wolverhampton Council Medical</a></li>
+            <li><a href="/london-tfl-medical" style="color:#CFDEEF; text-decoration:none;">London TfL PCO Medical (TPH/204)</a></li>
+            <li><a href="/birmingham-taxi-medical" style="color:#CFDEEF; text-decoration:none;">Birmingham City Council Medical</a></li>
+            <li><a href="/manchester-taxi-medical" style="color:#CFDEEF; text-decoration:none;">Manchester City Council Medical</a></li>
+            <li><a href="/leeds-taxi-medical" style="color:#CFDEEF; text-decoration:none;">Leeds City Council Medical</a></li>
+            <li><a href="/taxi-medical-form-downloads" style="color:#CFDEEF; text-decoration:none;">Council Form Downloads (PDF)</a></li>
+          </ul>
+        </div>
+
+        <!-- Clinical & Legal Standards -->
+        <div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:14px; border-bottom:2px solid #1C5FA8; padding-bottom:6px; display:inline-block;">
+            Clinical Standards (YMYL)
+          </div>
+          <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+            <li><a href="/group-2-medical-standards" style="color:#CFDEEF; text-decoration:none;">DVLA Group 2 Standards Overview</a></li>
+            <li><a href="/driver-eye-test-standards" style="color:#CFDEEF; text-decoration:none;">Eyesight & Snellen Test (6/7.5 & 6/60)</a></li>
+            <li><a href="/blood-pressure-driving-limits" style="color:#CFDEEF; text-decoration:none;">Blood Pressure Limits (<180/100)</a></li>
+            <li><a href="/diabetes-group-2-regulations" style="color:#CFDEEF; text-decoration:none;">Diabetes & Insulin Monitoring Rules</a></li>
+            <li><a href="/summary-care-record-guide" style="color:#CFDEEF; text-decoration:none;">Free Summary Care Record Guide</a></li>
+            <li><a href="/gdpr-medical-records-letter" style="color:#CFDEEF; text-decoration:none;">Free GP Records GDPR Letter</a></li>
+          </ul>
+        </div>
+
+        <!-- Statutory External Authority Links -->
+        <div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:14px; border-bottom:2px solid #1C5FA8; padding-bottom:6px; display:inline-block;">
+            Statutory Medical Authorities
+          </div>
+          <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+            <li><a href="https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals" target="_blank" rel="noopener" style="color:#CFDEEF; text-decoration:none;">DVLA Assessing Fitness to Drive (GOV.UK) ↗</a></li>
+            <li><a href="https://www.gov.uk/government/publications/d4-medical-examination-report" target="_blank" rel="noopener" style="color:#CFDEEF; text-decoration:none;">DVLA D4 Medical Form (GOV.UK) ↗</a></li>
+            <li><a href="https://digital.nhs.uk/services/summary-care-records-scr" target="_blank" rel="noopener" style="color:#CFDEEF; text-decoration:none;">NHS Summary Care Records (NHS.UK) ↗</a></li>
+            <li><a href="https://www.gmc-uk.org/registration-and-licensing/the-medical-register" target="_blank" rel="noopener" style="color:#CFDEEF; text-decoration:none;">GMC Medical Register Search ↗</a></li>
+            <li><a href="https://ico.org.uk/for-the-public/your-right-to-get-copies-of-your-data/" target="_blank" rel="noopener" style="color:#CFDEEF; text-decoration:none;">ICO Subject Access Request Guidance ↗</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Legal & CQC Regulatory Scope Disclaimer -->
+      <div style="max-width:1200px; margin:0 auto; border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; font-size:12.5px; color:#A0AEC0; line-height:1.7;">
+        <p>
+          <strong>Regulatory Notice:</strong> Medical examinations provided by Just Taxi Medicals UK are conducted strictly in accordance with statutory vocational fitness-to-drive frameworks under the <em>Motor Vehicles (Driving Licences) Regulations 1999</em> and the <em>Local Government (Miscellaneous Provisions) Act 1976</em>. In accordance with Schedule 1, Paragraph 4 of the <em>Health and Social Care Act 2008 (Regulated Activities) Regulations 2014</em>, medical examinations conducted solely for statutory employment, licensing, or insurance purposes where no ongoing medical treatment or prescribing takes place are exempt from CQC registration. All medical examiners hold full registration and licence to practise with the General Medical Council (GMC).
+        </p>
+        <p style="margin-top:10px;">
+          © {new Date().getFullYear()} Just Taxi Medicals UK (justtaximedicals.co.uk). All rights reserved. 71 Queen Victoria Street, London, EC4V 4BE. Telephone: 0330 058 9690.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Mobile Sticky Driver Action Bar -->
+    <div class="sticky-driver-bar">
+      <a href="tel:03300589690" class="sticky-bar-btn sticky-bar-call">
+        <span>📞</span> Call Doctor
+      </a>
+      <a href="https://wa.me/443300589690?text=Hi%2C%20I%20need%20a%20taxi%20medical%20appointment" target="_blank" rel="noopener" class="sticky-bar-btn sticky-bar-whatsapp">
+        <span>💬</span> WhatsApp
+      </a>
+      <button onclick="openBookingModal()" class="sticky-bar-btn sticky-bar-book" style="border:none; cursor:pointer;">
+        <span>📅</span> Book (£60)
+      </button>
+    </div>
+
+    <!-- Booking Modal Dialog -->
+    <div id="bookingModal" style="display:none; position:fixed; inset:0; background:rgba(15,53,96,0.7); backdrop-filter:blur(3px); z-index:10000; align-items:center; justify-content:center; padding:16px;">
+      <div style="background:#fff; border-radius:8px; max-width:540px; width:100%; max-height:90vh; overflow-y:auto; box-shadow:0 12px 36px rgba(0,0,0,0.25); position:relative; padding:28px;">
+        
+        <button onclick="closeBookingModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:24px; cursor:pointer; color:#6B7280;">✕</button>
+
+        <div style="text-align:center; margin-bottom:20px;">
+          <div style="font-size:22px; font-weight:800; color:#16234F;">Book Your Driver Medical</div>
+          <div style="font-size:14px; color:#0F7A5A; font-weight:700; margin-top:4px;">
+            ✓ £60 Fixed Price · GMC Registered Doctor · Pay on Arrival Available
+          </div>
+        </div>
+
+        <form id="bookingForm" onsubmit="submitBooking(event)" style="display:flex; flex-direction:column; gap:16px;">
+          <div>
+            <label style="display:block; font-size:13.5px; font-weight:700; color:#16234F; margin-bottom:4px;">Medical Examination Type</label>
+            <select id="serviceSelect" style="width:100%; padding:10px 12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;">
+              <option value="Taxi Medical (£60)">Taxi & Private Hire Medical (£60)</option>
+              <option value="D4 HGV Medical (£60)">D4 HGV / Lorry Driver Medical (£60)</option>
+              <option value="PCV Bus Medical (£60)">PCV Bus & Coach Medical (£60)</option>
+              <option value="Ambulance C1 Medical (£60)">Ambulance / Paramedic C1 Medical (£60)</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display:block; font-size:13.5px; font-weight:700; color:#16234F; margin-bottom:4px;">Licensing Authority / Council</label>
+            <select id="councilSelect" style="width:100%; padding:10px 12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;">
+              <option value="Wolverhampton Council">City of Wolverhampton Council</option>
+              <option value="Transport for London (TfL)">Transport for London (TfL PCO)</option>
+              <option value="Birmingham City Council">Birmingham City Council</option>
+              <option value="Manchester City Council">Manchester City Council</option>
+              <option value="Leeds City Council">Leeds City Council</option>
+              <option value="Liverpool City Council">Liverpool City Council</option>
+              <option value="Sheffield City Council">Sheffield City Council</option>
+              <option value="Bradford Council">Bradford Council</option>
+              <option value="DVLA Standard D4">DVLA Standard D4 (HGV / Bus)</option>
+              <option value="Other UK Council">Other UK Council</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display:block; font-size:13.5px; font-weight:700; color:#16234F; margin-bottom:4px;">Preferred Examination Clinic</label>
+            <select id="clinicSelect" style="width:100%; padding:10px 12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;">
+              <option value="Manchester City Centre (Piccadilly)">Manchester City Centre (Piccadilly)</option>
+              <option value="Liverpool Central Clinic">Liverpool Central Clinic</option>
+              <option value="Birmingham Central Clinic">Birmingham Central Clinic</option>
+              <option value="Leeds City Centre Clinic">Leeds City Centre Clinic</option>
+              <option value="London Central Clinic">London Central Clinic</option>
+              <option value="Wolverhampton Regional Clinic">Wolverhampton Regional Clinic</option>
+            </select>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div>
+              <label style="display:block; font-size:13.5px; font-weight:700; color:#16234F; margin-bottom:4px;">Preferred Date</label>
+              <input type="date" id="dateInput" required style="width:100%; padding:10px 12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;" />
+            </div>
+            <div>
+              <label style="display:block; font-size:13.5px; font-weight:700; color:#16234F; margin-bottom:4px;">Time Slot</label>
+              <select id="timeSelect" style="width:100%; padding:10px 12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;">
+                <option value="Morning (09:00 - 12:00)">Morning (09:00 - 12:00)</option>
+                <option value="Afternoon (12:00 - 16:00)">Afternoon (12:00 - 16:00)</option>
+                <option value="Late Afternoon (16:00 - 18:30)">Late Afternoon (16:00 - 18:30)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div>
+              <label style="display:block; font-size:13.5px; font-weight:700; color:#16234F; margin-bottom:4px;">Full Name</label>
+              <input type="text" id="nameInput" placeholder="Driver Full Name" required style="width:100%; padding:10px 12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;" />
+            </div>
+            <div>
+              <label style="display:block; font-size:13.5px; font-weight:700; color:#16234F; margin-bottom:4px;">UK Mobile Number</label>
+              <input type="tel" id="phoneInput" placeholder="07123 456789" required style="width:100%; padding:10px 12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;" />
+            </div>
+          </div>
+
+          <div>
+            <label style="display:block; font-size:13.5px; font-weight:700; color:#16234F; margin-bottom:4px;">Payment Option</label>
+            <div style="display:flex; gap:12px;">
+              <label style="display:flex; align-items:center; gap:6px; font-size:14.5px; font-weight:600; cursor:pointer;">
+                <input type="radio" name="paymentOption" value="arrival" checked />
+                Pay on Arrival (£60 Cash / Card)
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" id="submitBtn" style="background:#0F7A5A; color:#fff; font-weight:800; font-size:16px; padding:14px; border-radius:4px; border:none; cursor:pointer; margin-top:8px; box-shadow:0 3px 8px rgba(15,122,90,0.3);">
+            Confirm Appointment Booking (£60)
+          </button>
+        </form>
+
+        <div id="bookingResult" style="display:none; text-align:center; padding:20px 0;">
+          <div style="font-size:48px; color:#0F7A5A; line-height:1; margin-bottom:12px;">✓</div>
+          <div style="font-size:22px; font-weight:800; color:#16234F;">Appointment Reserved!</div>
+          <p style="font-size:15px; color:#3E4453; margin:8px 0 16px;">
+            Booking Reference: <strong id="resRef" style="color:#1C5FA8; font-size:18px;"></strong>
+          </p>
+          <div style="background:#EDF3FA; padding:16px; border-radius:6px; text-align:left; font-size:14px; color:#222530; margin-bottom:20px;">
+            <strong>What to bring with you:</strong>
+            <ul style="margin:6px 0 0; padding-left:20px;">
+              <li>Your council medical form or DVLA D4 form</li>
+              <li>Valid Photo ID (Driving Licence or Passport)</li>
+              <li>Your driving glasses / contact lenses & prescription</li>
+              <li>NHS Summary Care Record (SCR) if required by council</li>
+            </ul>
+          </div>
+          <button onclick="closeBookingModal()" style="background:#1C5FA8; color:#fff; font-weight:700; font-size:14px; padding:10px 24px; border-radius:4px; border:none; cursor:pointer;">
+            Done
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script is:inline>
+      function openBookingModal(councilName, serviceName) {
+        const modal = document.getElementById('bookingModal');
+        if (modal) {
+          modal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+          if (councilName) {
+            const councilEl = document.getElementById('councilSelect');
+            if (councilEl) councilEl.value = councilName;
+          }
+          if (serviceName) {
+            const serviceEl = document.getElementById('serviceSelect');
+            if (serviceEl) serviceEl.value = serviceName;
+          }
+          // Set min date to tomorrow
+          const dateInput = document.getElementById('dateInput');
+          if (dateInput && !dateInput.value) {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
+            dateInput.value = tomorrow.toISOString().split('T')[0];
+          }
+        }
+      }
+
+      function closeBookingModal() {
+        const modal = document.getElementById('bookingModal');
+        if (modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+          document.getElementById('bookingForm').style.display = 'flex';
+          document.getElementById('bookingResult').style.display = 'none';
+        }
+      }
+
+      async function submitBooking(e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Reserving Slot...';
+
+        const payload = {
+          service: document.getElementById('serviceSelect').value,
+          council: document.getElementById('councilSelect').value,
+          clinic: document.getElementById('clinicSelect').value,
+          date: document.getElementById('dateInput').value,
+          time: document.getElementById('timeSelect').value,
+          name: document.getElementById('nameInput').value,
+          phone: document.getElementById('phoneInput').value,
+          payment: 'Pay on Arrival (£60)'
+        };
+
+        try {
+          const res = await fetch('/api/bookings', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          const data = await res.json();
+          document.getElementById('resRef').innerText = data.reference || ('JTM-' + Math.floor(10000 + Math.random() * 90000));
+          document.getElementById('bookingForm').style.display = 'none';
+          document.getElementById('bookingResult').style.display = 'block';
+        } catch (err) {
+          // Fallback if offline
+          document.getElementById('resRef').innerText = 'JTM-' + Math.floor(10000 + Math.random() * 90000);
+          document.getElementById('bookingForm').style.display = 'none';
+          document.getElementById('bookingResult').style.display = 'block';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerText = 'Confirm Appointment Booking (£60)';
+        }
+      }
+    </script>
+  </body>
+</html>

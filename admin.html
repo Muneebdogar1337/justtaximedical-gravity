@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard — Direct Taxi Medicals UK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #16234F;
+      --blue: #1C5FA8;
+      --amber: #F5A623;
+      --green: #0F7A5A;
+      --red: #C62828;
+      --bg: #F4F6F9;
+      --paper: #FFFFFF;
+      --line: #DFE3E9;
+      --body: #3E4453;
+      --muted: #6B7280;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--body); line-height: 1.5; }
+
+    /* Top Bar */
+    .topbar { background: var(--navy); color: #fff; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid var(--amber); }
+    .topbar-brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 18px; color: #fff; text-decoration: none; }
+    .badge-admin { background: rgba(245, 166, 35, 0.2); color: var(--amber); font-size: 11px; padding: 3px 8px; border-radius: 12px; font-weight: 700; text-transform: uppercase; border: 1px solid var(--amber); }
+    .topbar-actions { display: flex; align-items: center; gap: 12px; }
+    .btn { padding: 8px 16px; border-radius: 4px; font-size: 13.5px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border: 0; transition: all 0.15s ease; }
+    .btn-white { background: #fff; color: var(--navy); }
+    .btn-white:hover { background: #EAEFF5; }
+    .btn-amber { background: var(--amber); color: var(--navy); font-weight: 700; }
+    .btn-amber:hover { background: #E09512; }
+
+    /* Main Container */
+    .container { max-width: 1280px; margin: 24px auto; padding: 0 20px; }
+
+    /* KPI Cards */
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .kpi-card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+    .kpi-label { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .kpi-value { font-size: 28px; font-weight: 800; color: var(--navy); }
+    .kpi-sub { font-size: 12px; color: var(--green); margin-top: 4px; font-weight: 600; }
+
+    /* Panel */
+    .panel { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); overflow: hidden; margin-bottom: 24px; }
+    .panel-header { padding: 18px 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .panel-title { font-size: 17px; font-weight: 700; color: var(--navy); }
+    
+    .filter-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .search-input { padding: 8px 12px; border: 1px solid var(--line); border-radius: 4px; font-size: 13.5px; width: 240px; font-family: inherit; }
+    .search-input:focus { outline: none; border-color: var(--blue); }
+    .tab-group { display: flex; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+    .tab-btn { background: #fff; border: 0; padding: 7px 14px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--muted); }
+    .tab-btn.is-active { background: var(--navy); color: #fff; }
+
+    /* Table */
+    .table-responsive { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px; }
+    th { background: #F8FAFC; color: var(--navy); font-weight: 700; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.4px; }
+    td { padding: 14px 16px; border-bottom: 1px solid #EDEFF3; vertical-align: middle; }
+    tr:hover td { background: #F9FBFE; }
+
+    .ref-badge { font-family: monospace; font-weight: 700; color: var(--blue); background: #EDF3FA; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .status-badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; }
+    .status-confirmed { background: #E6F4EA; color: #137333; }
+    .status-completed { background: #E8F0FE; color: #1A73E8; }
+    .status-cancelled { background: #FCE8E6; color: #C5221F; }
+
+    .action-btn { padding: 4px 8px; border: 1px solid var(--line); background: #fff; border-radius: 3px; font-size: 12px; font-weight: 600; cursor: pointer; margin-right: 4px; }
+    .action-btn:hover { background: #F1F4F9; }
+
+    /* Modal */
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 16px; }
+    .modal-backdrop.is-open { display: flex; }
+    .modal-box { background: #fff; width: 100%; max-width: 520px; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .modal-hd { background: var(--navy); color: #fff; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .modal-body { padding: 20px; }
+    .modal-ft { padding: 14px 20px; background: #F8FAFC; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; gap: 8px; }
+    .form-group { margin-bottom: 12px; }
+    .form-group label { display: block; font-size: 12.5px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .form-group input, .form-group select { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 4px; font-size: 13.5px; font-family: inherit; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <a href="/admin" class="topbar-brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Direct Taxi Medicals <span class="badge-admin">Admin Portal</span>
+    </a>
+    <div class="topbar-actions">
+      <a href="/" target="_blank" class="btn btn-white">View Live Site &nearr;</a>
+      <a href="/api/bookings/export.csv" class="btn btn-white">&darr; Export CSV</a>
+      <button type="button" class="btn btn-amber" id="btnNewBooking">+ Book Driver (Phone/Walk-in)</button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- KPI Metric Cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Total Bookings</div>
+        <div class="kpi-value" id="kpiTotal">0</div>
+        <div class="kpi-sub">All-time appointments</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Confirmed Upcoming</div>
+        <div class="kpi-value" id="kpiConfirmed" style="color:var(--blue);">0</div>
+        <div class="kpi-sub">Awaiting clinic attendance</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Completed Medicals</div>
+        <div class="kpi-value" id="kpiCompleted" style="color:var(--green);">0</div>
+        <div class="kpi-sub">Signed & passed drivers</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Projected Revenue</div>
+        <div class="kpi-value" id="kpiRevenue" style="color:var(--navy);">£0</div>
+        <div class="kpi-sub">From active bookings</div>
+      </div>
+    </div>
+
+    <!-- Bookings Management Panel -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">Driver Medical Appointments</div>
+        <div class="filter-row">
+          <input type="search" id="searchBookings" class="search-input" placeholder="Search driver, ref, council...">
+          <div class="tab-group" id="statusTabs">
+            <button type="button" class="tab-btn is-active" data-status="All">All</button>
+            <button type="button" class="tab-btn" data-status="Confirmed">Confirmed</button>
+            <button type="button" class="tab-btn" data-status="Completed">Completed</button>
+            <button type="button" class="tab-btn" data-status="Cancelled">Cancelled</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Reference</th>
+              <th>Date & Time</th>
+              <th>Driver Details</th>
+              <th>Service</th>
+              <th>Licensing Council & Clinic</th>
+              <th>Fee</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bookingsTableBody">
+            <tr><td colspan="8" style="text-align:center;padding:24px;">Loading bookings...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Driver Inquiries / Web Messages -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">Customer Web Inquiries & Support Messages</div>
+      </div>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Driver Name</th>
+              <th>Contact Details</th>
+              <th>Subject</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody id="inquiriesTableBody">
+            <tr><td colspan="5" style="text-align:center;padding:20px;color:var(--muted);">No new inquiries.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Manual Booking Modal (Walk-in or Phone) -->
+  <div class="modal-backdrop" id="modalNewBooking">
+    <div class="modal-box">
+      <div class="modal-hd">
+        <h4 style="margin:0;">Add Driver Medical Appointment</h4>
+        <button type="button" id="closeNewBookingModal" style="background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer;">&times;</button>
+      </div>
+      <form id="formNewBooking">
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Driver Full Name *</label>
+            <input type="text" id="manualName" required placeholder="e.g. Tariq Hussain">
+          </div>
+          <div class="form-group">
+            <label>Mobile Number *</label>
+            <input type="tel" id="manualPhone" required placeholder="e.g. 07700 900542">
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="manualEmail" required placeholder="e.g. driver@example.co.uk">
+          </div>
+          <div class="form-group">
+            <label>Licensing Council *</label>
+            <input type="text" id="manualCouncil" required value="Wolverhampton City Council">
+          </div>
+          <div class="form-group">
+            <label>Clinic Location</label>
+            <input type="text" id="manualClinic" required value="Central Driver Medical Clinic">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="form-group">
+              <label>Date *</label>
+              <input type="date" id="manualDate" required>
+            </div>
+            <div class="form-group">
+              <label>Time Slot *</label>
+              <select id="manualTime">
+                <option>09:15 AM</option>
+                <option>10:30 AM</option>
+                <option>11:45 AM</option>
+                <option>01:30 PM</option>
+                <option>02:45 PM</option>
+                <option>04:15 PM</option>
+                <option>05:30 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Medical Service Type</label>
+            <select id="manualService">
+              <option value="Taxi & Private Hire|60">Taxi & Private Hire (£60)</option>
+              <option value="HGV / LGV D4|55">HGV / LGV D4 (£55)</option>
+              <option value="PCV / Bus & Coach|60">PCV / Bus & Coach (£60)</option>
+              <option value="Express Urgent Fast-Track|75">Express Urgent Fast-Track (£75)</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-ft">
+          <button type="button" class="btn btn-white" id="cancelManualBooking">Cancel</button>
+          <button type="submit" class="btn btn-amber">Save & Confirm Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let currentFilter = 'All';
+    let searchQuery = '';
+
+    // Load Stats
+    async function loadStats() {
+      try {
+        const res = await fetch('/api/stats');
+        const data = await res.json();
+        document.getElementById('kpiTotal').innerText = data.total;
+        document.getElementById('kpiConfirmed').innerText = data.confirmed;
+        document.getElementById('kpiCompleted').innerText = data.completed;
+        document.getElementById('kpiRevenue').innerText = '£' + data.revenue;
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    // Load Bookings Table
+    async function loadBookings() {
+      try {
+        const url = `/api/bookings?status=${encodeURIComponent(currentFilter)}&search=${encodeURIComponent(searchQuery)}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        const tbody = document.getElementById('bookingsTableBody');
+
+        if (!data.bookings || data.bookings.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;padding:24px;color:var(--muted);">No matching bookings found.</td></tr>';
+          return;
+        }
+
+        tbody.innerHTML = data.bookings.map(b => `
+          <tr>
+            <td><span class="ref-badge">${b.ref}</span></td>
+            <td>
+              <b>${b.date}</b><br>
+              <span style="color:var(--muted);font-size:12px;">${b.time}</span>
+            </td>
+            <td>
+              <strong style="color:var(--navy);">${b.driver_name}</strong><br>
+              <span style="font-size:12px;color:var(--muted);">${b.driver_phone} &bull; ${b.driver_email}</span>
+            </td>
+            <td>${b.service}</td>
+            <td>
+              <b>${b.council}</b><br>
+              <span style="font-size:12px;color:var(--muted);">${b.clinic}</span>
+            </td>
+            <td>
+              <b style="color:var(--navy);">£${b.price}</b><br>
+              <span style="font-size:11.5px;color:${b.payment_status === 'Paid' ? 'var(--green)' : 'var(--muted)'};">${b.payment_status}</span>
+            </td>
+            <td>
+              <span class="status-badge status-${b.status.toLowerCase()}">${b.status}</span>
+            </td>
+            <td>
+              ${b.status !== 'Completed' ? `<button class="action-btn" onclick="updateStatus(${b.id}, 'Completed')">&check; Complete</button>` : ''}
+              ${b.status !== 'Cancelled' ? `<button class="action-btn" onclick="updateStatus(${b.id}, 'Cancelled')" style="color:var(--red);">&times; Cancel</button>` : ''}
+            </td>
+          </tr>
+        `).join('');
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    // Load Inquiries
+    async function loadInquiries() {
+      try {
+        const res = await fetch('/api/inquiries');
+        const data = await res.json();
+        const tbody = document.getElementById('inquiriesTableBody');
+        if (!data.inquiries || data.inquiries.length === 0) return;
+        tbody.innerHTML = data.inquiries.map(i => `
+          <tr>
+            <td>${i.created_at.split(' ')[0]}</td>
+            <td><strong>${i.name}</strong></td>
+            <td>${i.phone || ''} &bull; ${i.email}</td>
+            <td>${i.subject || 'General Inquiry'}</td>
+            <td style="max-width:300px;">${i.message}</td>
+          </tr>
+        `).join('');
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    // Update Status
+    window.updateStatus = async function(id, status) {
+      if (!confirm(`Are you sure you want to change this booking to ${status}?`)) return;
+      await fetch(`/api/bookings/${id}/status`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status })
+      });
+      loadStats();
+      loadBookings();
+    };
+
+    // Filter Tabs
+    document.querySelectorAll('#statusTabs .tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#statusTabs .tab-btn').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        currentFilter = btn.dataset.status;
+        loadBookings();
+      });
+    });
+
+    // Search Input
+    let searchTimeout;
+    document.getElementById('searchBookings').addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        searchQuery = e.target.value.trim();
+        loadBookings();
+      }, 250);
+    });
+
+    // Manual Booking Modal
+    const modal = document.getElementById('modalNewBooking');
+    document.getElementById('btnNewBooking').addEventListener('click', () => {
+      document.getElementById('manualDate').value = new Date().toISOString().split('T')[0];
+      modal.classList.add('is-open');
+    });
+    document.getElementById('closeNewBookingModal').addEventListener('click', () => modal.classList.remove('is-open'));
+    document.getElementById('cancelManualBooking').addEventListener('click', () => modal.classList.remove('is-open'));
+
+    document.getElementById('formNewBooking').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const serviceParts = document.getElementById('manualService').value.split('|');
+      const payload = {
+        driver_name: document.getElementById('manualName').value,
+        driver_phone: document.getElementById('manualPhone').value,
+        driver_email: document.getElementById('manualEmail').value,
+        council: document.getElementById('manualCouncil').value,
+        clinic: document.getElementById('manualClinic').value,
+        date: document.getElementById('manualDate').value,
+        time: document.getElementById('manualTime').value,
+        service: serviceParts[0],
+        price: Number(serviceParts[1]),
+        payment_method: 'Pay at Clinic',
+        payment_status: 'Pending'
+      };
+
+      const res = await fetch('/api/bookings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert('Booking successfully created! Reference: ' + data.booking.ref);
+        modal.classList.remove('is-open');
+        document.getElementById('formNewBooking').reset();
+        loadStats();
+        loadBookings();
+      }
+    });
+
+    // Initial load
+    loadStats();
+    loadBookings();
+    loadInquiries();
+  </script>
+</body>
+</html>

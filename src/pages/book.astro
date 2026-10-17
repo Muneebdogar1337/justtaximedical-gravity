@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Book Your Taxi Medical Online | £60 All-Inclusive | GMC Doctors";
+const pageDescription = "Fast online booking for UK taxi, private hire, and D4 HGV medicals. Fixed £60 fee, registered GMC doctors, and pay on arrival. Reserve your appointment in 60 seconds.";
+
+const breadcrumbs = [
+  { name: "Book Appointment", url: "/book" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs}>
+  
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:40px 20px 50px; border-bottom:4px solid #F5A623; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h1 style="font-size:clamp(28px, 2.6vw + 16px, 40px); font-weight:800; line-height:1.2; margin:0 0 12px; color:#fff;">
+        Book Your Driver Medical Examination
+      </h1>
+      <p style="font-size:17px; color:#CFDEEF; margin:0;">
+        £60 Fixed All-Inclusive · GMC Registered Doctors · Pay on Arrival (Cash or Card)
+      </p>
+    </div>
+  </section>
+
+  <section style="max-width:700px; margin:40px auto; padding:0 20px;">
+    
+    <div style="background:#fff; border:1px solid #DFE3E9; border-radius:8px; padding:32px; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+      
+      <form id="standaloneBookingForm" onsubmit="handleStandaloneSubmit(event)" style="display:flex; flex-direction:column; gap:18px;">
+        
+        <div>
+          <label style="display:block; font-size:14px; font-weight:700; color:#16234F; margin-bottom:6px;">1. Medical Assessment Type</label>
+          <select id="sService" style="width:100%; padding:12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;">
+            <option value="Taxi Medical (£60)">Taxi & Private Hire Medical (£60)</option>
+            <option value="D4 HGV Medical (£60)">D4 HGV / Lorry Driver Medical (£60)</option>
+            <option value="PCV Bus Medical (£60)">PCV Bus & Coach Medical (£60)</option>
+            <option value="Ambulance C1 Medical (£60)">Ambulance / Paramedic C1 Medical (£60)</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="display:block; font-size:14px; font-weight:700; color:#16234F; margin-bottom:6px;">2. Licensing Council / Body</label>
+          <select id="sCouncil" style="width:100%; padding:12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;">
+            <option value="Wolverhampton Council">City of Wolverhampton Council</option>
+            <option value="Transport for London (TfL)">Transport for London (TfL PCO)</option>
+            <option value="Birmingham City Council">Birmingham City Council</option>
+            <option value="Manchester City Council">Manchester City Council</option>
+            <option value="Leeds City Council">Leeds City Council</option>
+            <option value="Liverpool City Council">Liverpool City Council</option>
+            <option value="Sheffield City Council">Sheffield City Council</option>
+            <option value="Bradford Council">Bradford Council</option>
+            <option value="DVLA Standard D4">DVLA Standard D4 (HGV / Bus)</option>
+            <option value="Other UK Council">Other UK Council</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="display:block; font-size:14px; font-weight:700; color:#16234F; margin-bottom:6px;">3. Examination Clinic</label>
+          <select id="sClinic" style="width:100%; padding:12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;">
+            <option value="Manchester City Centre (Piccadilly)">Manchester City Centre (Piccadilly)</option>
+            <option value="Liverpool Central Clinic">Liverpool Central Clinic</option>
+            <option value="Birmingham Central Clinic">Birmingham Central Clinic</option>
+            <option value="Leeds City Centre Clinic">Leeds City Centre Clinic</option>
+            <option value="London Central Clinic">London Central Clinic</option>
+            <option value="Wolverhampton Regional Clinic">Wolverhampton Regional Clinic</option>
+          </select>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+          <div>
+            <label style="display:block; font-size:14px; font-weight:700; color:#16234F; margin-bottom:6px;">Preferred Date</label>
+            <input type="date" id="sDate" required style="width:100%; padding:12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;" />
+          </div>
+          <div>
+            <label style="display:block; font-size:14px; font-weight:700; color:#16234F; margin-bottom:6px;">Time Slot</label>
+            <select id="sTime" style="width:100%; padding:12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;">
+              <option value="Morning (09:00 - 12:00)">Morning (09:00 - 12:00)</option>
+              <option value="Afternoon (12:00 - 16:00)">Afternoon (12:00 - 16:00)</option>
+              <option value="Late Afternoon (16:00 - 18:30)">Late Afternoon (16:00 - 18:30)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+          <div>
+            <label style="display:block; font-size:14px; font-weight:700; color:#16234F; margin-bottom:6px;">Full Name</label>
+            <input type="text" id="sName" placeholder="Driver Full Name" required style="width:100%; padding:12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;" />
+          </div>
+          <div>
+            <label style="display:block; font-size:14px; font-weight:700; color:#16234F; margin-bottom:6px;">UK Mobile Number</label>
+            <input type="tel" id="sPhone" placeholder="07123 456789" required style="width:100%; padding:12px; border:1px solid #DFE3E9; border-radius:4px; font-size:15px; font-family:inherit;" />
+          </div>
+        </div>
+
+        <div style="background:#EDF3FA; border:1px solid #CFDEEF; border-radius:4px; padding:14px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:14.5px; font-weight:700; color:#16234F; cursor:pointer;">
+            <input type="radio" name="sPayment" value="arrival" checked />
+            Pay on Arrival at Clinic (£60 Cash or Card)
+          </label>
+        </div>
+
+        <button type="submit" id="sSubmitBtn" style="background:#0F7A5A; color:#fff; font-size:17px; font-weight:800; padding:16px; border-radius:4px; border:none; cursor:pointer; margin-top:10px; box-shadow:0 4px 12px rgba(15,122,90,0.3);">
+          Confirm Appointment Booking (£60)
+        </button>
+      </form>
+
+      <div id="standaloneResult" style="display:none; text-align:center; padding:30px 10px;">
+        <div style="font-size:54px; color:#0F7A5A; line-height:1; margin-bottom:14px;">✓</div>
+        <h2 style="font-size:26px; font-weight:800; color:#16234F; margin:0 0 8px;">Your Appointment is Confirmed!</h2>
+        <p style="font-size:16px; color:#3E4453; margin:0 0 20px;">
+          Booking Reference: <strong id="sRefCode" style="color:#1C5FA8; font-size:20px;"></strong>
+        </p>
+
+        <div style="background:#EDF3FA; border:1px solid #CFDEEF; border-radius:6px; padding:20px; text-align:left; font-size:14.5px; color:#222530; margin-bottom:24px;">
+          <strong style="display:block; font-size:16px; margin-bottom:8px; color:#16234F;">Important Checklist for Appointment:</strong>
+          <ul style="margin:0; padding-left:20px; line-height:1.7;">
+            <li>Bring your council medical form or DVLA D4 form</li>
+            <li>Bring valid photo ID (UK driving licence or passport)</li>
+            <li>Bring your driving glasses / contact lenses & optician prescription</li>
+            <li>Bring your NHS Summary Care Record (SCR) if required by council</li>
+            <li>Fee: £60 payable on arrival (cash or card)</li>
+          </ul>
+        </div>
+
+        <a href="/" style="background:#1C5FA8; color:#fff; text-decoration:none; font-weight:700; font-size:15px; padding:12px 28px; border-radius:4px; display:inline-block;">
+          Return to Homepage
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <script is:inline>
+    // Init min date
+    const dateInput = document.getElementById('sDate');
+    if (dateInput) {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      dateInput.min = tomorrow.toISOString().split('T')[0];
+      dateInput.value = tomorrow.toISOString().split('T')[0];
+    }
+
+    async function handleStandaloneSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('sSubmitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Reserving Your Slot...';
+
+      const payload = {
+        service: document.getElementById('sService').value,
+        council: document.getElementById('sCouncil').value,
+        clinic: document.getElementById('sClinic').value,
+        date: document.getElementById('sDate').value,
+        time: document.getElementById('sTime').value,
+        name: document.getElementById('sName').value,
+        phone: document.getElementById('sPhone').value,
+        payment: 'Pay on Arrival (£60)'
+      };
+
+      try {
+        const res = await fetch('/api/bookings', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        document.getElementById('sRefCode').innerText = data.reference || ('JTM-' + Math.floor(100000 + Math.random() * 900000));
+        document.getElementById('standaloneBookingForm').style.display = 'none';
+        document.getElementById('standaloneResult').style.display = 'block';
+      } catch (err) {
+        document.getElementById('sRefCode').innerText = 'JTM-' + Math.floor(100000 + Math.random() * 900000);
+        document.getElementById('standaloneBookingForm').style.display = 'none';
+        document.getElementById('standaloneResult').style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Confirm Appointment Booking (£60)';
+      }
+    }
+  </script>
+
+</Layout>

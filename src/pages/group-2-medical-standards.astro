@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "DVLA Group 2 Medical Standards | Statutory Guidelines for Drivers";
+const pageDescription = "Complete clinical guide to DVLA Group 2 medical standards for UK taxi, private hire, bus, and HGV drivers. Visual acuity, blood pressure, diabetes & cardiac rules.";
+
+const breadcrumbs = [
+  { name: "Medical Standards", url: "/group-2-medical-standards" }
+];
+
+const medicalWebPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "DVLA Group 2 Medical Standards for Occupational Drivers",
+  "url": "https://justtaximedicals.co.uk/group-2-medical-standards",
+  "description": "Statutory occupational health fitness-to-drive guidelines for UK taxi, bus, and lorry operators under DVLA Group 2 regulations.",
+  "reviewedBy": {
+    "@type": "Physician",
+    "name": "Dr Ayyaz Sultan",
+    "jobTitle": "Consultant Cardiologist & Medical Director",
+    "identifier": "6049394",
+    "sameAs": "https://www.gmc-uk.org/doctor/6049394"
+  },
+  "lastReviewed": "2026-10-17",
+  "citation": [
+    "https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals",
+    "https://www.nhs.uk/conditions/high-blood-pressure-hypertension/",
+    "https://digital.nhs.uk/services/summary-care-records-scr"
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} breadcrumbs={breadcrumbs} extraSchema={medicalWebPageSchema}>
+  
+  <!-- HERO SECTION -->
+  <section style="background:linear-gradient(135deg, #16234F 0%, #0F3560 100%); color:#fff; padding:50px 20px 60px; border-bottom:4px solid #F5A623;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="font-size:13.5px; font-weight:700; color:#CFDEEF; margin-bottom:12px;">
+        <a href="/" style="color:#CFDEEF; text-decoration:none;">Home</a> &nbsp;/&nbsp; Medical Standards &nbsp;/&nbsp; <span style="color:#F5A623;">Group 2 Guidelines</span>
+      </div>
+
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(245,166,35,0.15); border:1px solid #F5A623; color:#F5A623; padding:5px 12px; border-radius:16px; font-size:13px; font-weight:700; margin-bottom:14px;">
+        <span>📖</span> Official Clinical Reference
+      </div>
+      <h1 style="font-size:clamp(30px, 2.8vw + 16px, 44px); font-weight:800; line-height:1.2; margin:0 0 16px; color:#fff;">
+        DVLA Group 2 Medical Standards Explained
+      </h1>
+      <p style="font-size:17.5px; line-height:1.6; color:#CFDEEF; margin:0 0 20px; max-width:680px;">
+        The statutory health criteria governing taxi drivers, private hire operators, bus drivers, and heavy goods vehicle (HGV) licence holders across England, Wales, and Scotland.
+      </p>
+
+      <div style="font-size:13.5px; color:#A5D6A7; background:rgba(255,255,255,0.06); padding:10px 16px; border-radius:6px; display:inline-block; border:1px solid rgba(255,255,255,0.12);">
+        🩺 <strong>Clinically Reviewed by:</strong> Dr Ayyaz Sultan, MBBS, MRCP, FRCP (<a href="https://www.gmc-uk.org/doctor/6049394" target="_blank" rel="noopener" style="color:#81C784;">GMC #6049394</a>) · October 2026
+      </div>
+    </div>
+  </section>
+
+  <!-- YMYL CLINICAL REFERENCE -->
+  <section style="max-width:1100px; margin:30px auto 0; padding:0 20px;">
+    <div class="clinical-factcheck-box">
+      <div class="clinical-factcheck-icon">🛡️</div>
+      <div class="clinical-factcheck-content">
+        <strong>Statutory Guidance Source:</strong>
+        All clinical benchmarks detailed on this page are derived directly from the official 
+        <a href="https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals" target="_blank" rel="noopener">DVLA Assessing Fitness to Drive: A Guide for Medical Professionals</a>. 
+        Local councils apply these Group 2 medical rules under Section 57 of the <em>Local Government (Miscellaneous Provisions) Act 1976</em>.
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE STANDARDS TABLE -->
+  <section style="max-width:1100px; margin:40px auto; padding:0 20px;">
+    <h2 style="font-size:28px; font-weight:800; color:#16234F; margin:0 0 20px;">
+      Overview of Vocational Fitness Standards
+    </h2>
+
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; background:#fff; border:1px solid #DFE3E9; font-size:15px; text-align:left;">
+        <thead>
+          <tr style="background:#16234F; color:#fff;">
+            <th style="padding:14px 16px; font-weight:700; border-bottom:2px solid #F5A623;">Clinical Category</th>
+            <th style="padding:14px 16px; font-weight:700; border-bottom:2px solid #F5A623;">Statutory Group 2 Threshold</th>
+            <th style="padding:14px 16px; font-weight:700; border-bottom:2px solid #F5A623;">Clinical Check Method</th>
+            <th style="padding:14px 16px; font-weight:700; border-bottom:2px solid #F5A623;">Driver Preparation Advice</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #DFE3E9;">
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">Visual Acuity</td>
+            <td style="padding:14px 16px;">6/7.5 better eye; 6/60 worse eye (glasses allowed, max +8 dioptres)</td>
+            <td style="padding:14px 16px;">Illuminated Snellen chart at 3m or 6m</td>
+            <td style="padding:14px 16px;">Bring driving glasses and recent optician prescription (<12 months old)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #DFE3E9; background:#F9FAFB;">
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">Visual Field</td>
+            <td style="padding:14px 16px;">At least 160° horizontal field; 70° left/right, 30° up/down. No central defects.</td>
+            <td style="padding:14px 16px;">Confrontation field test</td>
+            <td style="padding:14px 16px;">Inform doctor of any eye surgery or glaucoma</td>
+          </tr>
+          <tr style="border-bottom:1px solid #DFE3E9;">
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">Blood Pressure</td>
+            <td style="padding:14px 16px;">Consistently below <strong>180/100 mmHg</strong></td>
+            <td style="padding:14px 16px;">Seated manual or electronic sphygmomanometer</td>
+            <td style="padding:14px 16px;">Avoid caffeine/smoking 2 hours prior; free 10-minute rest re-test provided</td>
+          </tr>
+          <tr style="border-bottom:1px solid #DFE3E9; background:#F9FAFB;">
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">Diabetes (Insulin)</td>
+            <td style="padding:14px 16px;">Regular blood glucose monitoring; minimum 3 months of memory logs</td>
+            <td style="padding:14px 16px;">Inspection of meter/CGM logs and hypoglycaemia awareness screen</td>
+            <td style="padding:14px 16px;">Bring your glucose meter or CGM reader with 3 full months of records</td>
+          </tr>
+          <tr style="border-bottom:1px solid #DFE3E9;">
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">Cardiovascular</td>
+            <td style="padding:14px 16px;">No disqualifying arrhythmias, angina while driving, or aortic aneurysm >5.5cm</td>
+            <td style="padding:14px 16px;">Stethoscope heart auscultation & medical history notes</td>
+            <td style="padding:14px 16px;">Bring cardiology discharge letters for past stents or bypass surgery</td>
+          </tr>
+          <tr>
+            <td style="padding:14px 16px; font-weight:700; color:#16234F;">Neurological</td>
+            <td style="padding:14px 16px;">Epilepsy-free for 10 years off medication; no unexplained blackouts</td>
+            <td style="padding:14px 16px;">Cranial nerve, limb coordination, and reflex checks</td>
+            <td style="padding:14px 16px;">Provide NHS neurologist discharge summary if relevant</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DEEP DIVE SECTIONS -->
+  <section style="max-width:1100px; margin:40px auto; padding:0 20px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px;">
+      
+      <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:24px;">
+        <h3 style="font-size:20px; font-weight:700; color:#16234F; margin:0 0 10px;">Why Group 2 Standards Apply to Taxis</h3>
+        <p style="font-size:15px; color:#3E4453; line-height:1.6; margin:0 0 14px;">
+          While a standard driving licence follows Group 1 rules, UK local authorities apply Group 2 medical standards to hackney carriage and private hire drivers. Professional drivers spend long hours behind the wheel carrying members of the public, requiring a higher degree of physical and cardiovascular fitness.
+        </p>
+        <a href="/taxi-driver-medical" style="font-size:14px; font-weight:700; color:#1C5FA8;">Learn About Taxi Medicals ➔</a>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DFE3E9; border-radius:6px; padding:24px;">
+        <h3 style="font-size:20px; font-weight:700; color:#16234F; margin:0 0 10px;">What Happens If a Driver Fails?</h3>
+        <p style="font-size:15px; color:#3E4453; line-height:1.6; margin:0 0 14px;">
+          Failing a check on the day is rarely final. If your blood pressure is temporarily elevated or your eyesight prescription needs updating, our doctor will advise you on the exact corrective steps with your optician or GP. You can re-attend our clinic for a fast-track re-test once stabilized.
+        </p>
+        <a href="/blood-pressure-driving-limits" style="font-size:14px; font-weight:700; color:#1C5FA8;">Read Blood Pressure Retest Rules ➔</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section style="background:#16234F; color:#fff; padding:50px 20px; text-align:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-size:30px; font-weight:800; color:#fff; margin:0 0 12px;">Ready for Your Group 2 Medical?</h2>
+      <p style="font-size:17px; color:#CFDEEF; margin:0 0 24px;">
+        Fixed £60 all-inclusive fee. Same-day appointments available with registered GMC doctors.
+      </p>
+      <button onclick="openBookingModal()" style="background:#F5A623; color:#16234F; font-size:16px; font-weight:800; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(245,166,35,0.3);">
+        Book Medical Appointment (£60)
+      </button>
+    </div>
+  </section>
+
+</Layout>
